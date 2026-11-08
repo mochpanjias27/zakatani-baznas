@@ -8,7 +8,7 @@ ZT.CONFIG = {
   versi: '0.1.0',
   // Berkas data (mode cadangan tanpa server). Dibaca relatif terhadap index.html.
   berkasData: 'data/simpul.json',
-  berkasBatas: 'data/indonesia-provinsi.geojson',
+  berkasBatas: 'data/indonesia-provinsi.json',
 
   // Supabase (opsional). Isi untuk mengaktifkan penyimpanan PostgreSQL + login tim.
   // Biarkan kosong → website membaca data/simpul.json (bisa dibuka juri tanpa login).

@@ -36,7 +36,7 @@ js/halaman.js              Beranda, Alur, Profil, Dampak, Tentang
 js/kelola.js               Kelola Data
 js/app.js                  titik masuk, router, saklar "Hanya data asli"
 data/simpul.json           simpul, parameter, alur, statistik, dampak (TERPISAH dari kode)
-data/indonesia-provinsi.geojson  batas 38 provinsi (basemap luring)
+data/indonesia-provinsi.json  batas 38 provinsi (basemap luring)
 tools/buat_data.py         generator data awal (koordinat dari dataset resmi, bukan tebakan)
 docs/supabase.sql          skema tabel + kebijakan akses Supabase
 ```

@@ -1,4 +1,4 @@
-"""Generator data awal ZakaTani -> data/simpul.json dan data/indonesia-provinsi.geojson.
+"""Generator data awal ZakaTani -> data/simpul.json dan data/indonesia-provinsi.json.
 
 Jalankan ulang bila data awal diubah:  python3 tools/buat_data.py
 Koordinat TIDAK ditebak: diambil dari titik acuan kab/kota dataset GeoJSON
@@ -248,5 +248,5 @@ def rnd(x):
 for f in prov38['features']:
     f['geometry']['coordinates'] = rnd(f['geometry']['coordinates'])
     f['properties'] = {'provinsi': f['properties']['PROVINSI']}
-json.dump(prov38, open(f'{ROOT}/data/indonesia-provinsi.geojson', 'w'), separators=(',', ':'))
+json.dump(prov38, open(f'{ROOT}/data/indonesia-provinsi.json', 'w'), separators=(',', ':'))
 print(len(simpul), 'simpul;', sum(s['jenis'] == 'lumbung' for s in simpul), 'lumbung')
