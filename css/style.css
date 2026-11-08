@@ -7,7 +7,7 @@
    ========================================================================= */
 :root{
   --hijau-tua:#1F5E3B; --hijau-gelap:#153F28; --hijau-padi:#4E8F3A; --gabah:#E3B23C;
-  --gabah-muda:#F6E7BF; --tanah:#8A6440; --krem:#FAF7EF; --krem-2:#F3EDDF; --arang:#2B2B2B;
+  --gabah-muda:#F6E7BF; --gabah-teks:#F2CC6B; --tanah:#8A6440; --krem:#FAF7EF; --krem-2:#F3EDDF; --arang:#2B2B2B;
   --abu:#585C54; --garis:#E5DDCA; --putih:#fff; --merah:#A4361F;
   --r:12px; --r-sm:8px; --bayang:0 1px 2px rgba(43,43,43,.06),0 4px 16px rgba(43,43,43,.05);
   --font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -70,7 +70,7 @@ p{margin:0 0 1em}
 /* ---------- label & lencana ---------- */
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--hijau-tua);margin-bottom:12px}
 .eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
-.gelap .eyebrow{color:var(--gabah)}
+.gelap .eyebrow{color:var(--gabah-teks)}
 .lencana-contoh{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:800;color:#6B4A00;background:var(--gabah-muda);border:1px solid #E7C873;border-radius:20px;padding:0 6px;line-height:16px;vertical-align:middle;white-space:nowrap;letter-spacing:.02em}
 .lencana-contoh svg{width:10px;height:10px}
 .lencana-verif{display:inline-flex;font-size:10.5px;font-weight:700;color:#5b3d1e;background:#EFE3D3;border-radius:20px;padding:0 6px;line-height:16px;vertical-align:middle;margin-left:3px}
@@ -84,8 +84,8 @@ p{margin:0 0 1em}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,40,25,.92) 0%,rgba(13,40,25,.72) 42%,rgba(13,40,25,.05) 75%);pointer-events:none}
 .hero .wadah{position:relative;z-index:2;padding-top:96px;padding-bottom:150px;display:grid;grid-template-columns:minmax(0,640px);}
 .hero h1{font-size:clamp(38px,6vw,66px);font-weight:800;line-height:1.04;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--gabah)}
-.hero .eyebrow{color:var(--gabah)}
+.hero h1 em{font-style:normal;color:var(--gabah-teks)}
+.hero .eyebrow{color:var(--gabah-teks)}
 .hero p.lead{font-size:18px;max-width:540px;color:#E4EEE6;margin-bottom:30px}
 .hero .aksi{display:flex;gap:14px;flex-wrap:wrap}
 .hero .sosial{position:absolute;left:20px;top:50%;transform:translateY(-50%);display:none}
@@ -106,7 +106,7 @@ p{margin:0 0 1em}
 .kartu-stat .sumber a{color:var(--abu)}
 .kartu-stat.sorot{background:var(--hijau-tua);color:#fff;border-color:var(--hijau-tua)}
 .kartu-stat.sorot .ikon{background:rgba(255,255,255,.12);color:var(--gabah)}
-.kartu-stat.sorot .angka{color:var(--gabah)}
+.kartu-stat.sorot .angka{color:var(--gabah-teks)}
 .kartu-stat.sorot .sumber,.kartu-stat.sorot .sumber a{color:#D3E2D7;border-color:rgba(255,255,255,.25)}
 
 /* ---------- seksi umum ---------- */
@@ -124,7 +124,7 @@ p{margin:0 0 1em}
 .kepala-halaman::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(227,178,60,.12)}
 .kepala-halaman h1{font-size:clamp(28px,4vw,44px);margin-bottom:8px}
 .kepala-halaman p{color:#DCE8DF;max-width:760px;margin:0}
-.kepala-halaman .eyebrow{color:var(--gabah)}
+.kepala-halaman .eyebrow{color:var(--gabah-teks)}
 
 /* ---------- alur ---------- */
 .alur{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:10px}
@@ -170,7 +170,7 @@ p{margin:0 0 1em}
 .kartu-fitur:hover,.kartu-fitur.sorot{background:var(--hijau-tua);color:#fff;border-color:var(--hijau-tua)}
 .kartu-fitur:hover p,.kartu-fitur.sorot p{color:#DCE8DF}
 .kartu-fitur:hover .ikon,.kartu-fitur.sorot .ikon{background:var(--gabah);color:var(--hijau-gelap)}
-.kartu-fitur:hover .lanjut,.kartu-fitur.sorot .lanjut{color:var(--gabah)}
+.kartu-fitur:hover .lanjut,.kartu-fitur.sorot .lanjut{color:var(--gabah-teks)}
 
 /* ---------- peta ---------- */
 .bilah-ringkas{background:var(--putih);border-bottom:1px solid var(--garis)}
@@ -228,7 +228,7 @@ select,input[type=number],input[type=text],input[type=email],input[type=password
 .sumber-list li{margin-bottom:6px}
 .sumber-list a{word-break:break-word}
 .callout{position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:550;background:var(--hijau-tua);color:#fff;border-radius:40px;padding:8px 10px 8px 18px;display:flex;gap:12px;align-items:center;font-size:13.5px;font-weight:600;box-shadow:var(--bayang);max-width:calc(100% - 340px)}
-.callout b{color:var(--gabah)}
+.callout b{color:var(--gabah-teks)}
 .callout button{background:var(--gabah);color:var(--arang);border:0;border-radius:30px;padding:6px 12px;font:800 12.5px var(--font);cursor:pointer;white-space:nowrap}
 .callout .x{background:transparent;color:#fff;font-size:16px;padding:4px 8px}
 
@@ -272,7 +272,7 @@ input[type=range]{width:100%;accent-color:var(--hijau-tua)}
 .kartu-hasil small{font-size:12.5px;color:var(--abu)}
 .kartu-hasil.sorot{background:var(--hijau-tua);border-color:var(--hijau-tua)}
 .kartu-hasil.sorot span,.kartu-hasil.sorot small{color:#DCE8DF}
-.kartu-hasil.sorot b{color:var(--gabah)}
+.kartu-hasil.sorot b{color:var(--gabah-teks)}
 .batang-porsi{display:flex;height:12px;border-radius:12px;overflow:hidden;background:var(--krem-2);margin-top:6px}
 .batang-porsi i{display:block;height:100%}
 .tabel{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--putih);border-radius:var(--r);overflow:hidden;border:1px solid var(--garis)}
@@ -366,12 +366,12 @@ input[type=range]{width:100%;accent-color:var(--hijau-tua)}
 .kaki-situs .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px}
 .kaki-situs h4{color:#fff;font-size:16px;margin-bottom:14px}
 .kaki-situs a{color:#D3E2D7;text-decoration:none}
-.kaki-situs a:hover{color:var(--gabah)}
+.kaki-situs a:hover{color:var(--gabah-teks)}
 .kaki-situs ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .kaki-situs .merek b{color:#fff}
 .kaki-situs .merek small{color:#C2D3C7}
 .disclaimer{border-top:1px solid rgba(255,255,255,.15);padding:18px 0;font-size:13px;text-align:center;color:#C2D3C7}
-.disclaimer strong{color:var(--gabah)}
+.disclaimer strong{color:var(--gabah-teks)}
 
 /* ---------- responsif ---------- */
 @media (max-width:1240px){.merek small{display:none}}
