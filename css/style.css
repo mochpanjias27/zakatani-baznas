@@ -191,8 +191,8 @@ p{margin:0 0 1em}
 .chip[aria-pressed="true"]{background:var(--hijau-tua);border-color:var(--hijau-tua);color:#fff}
 select,input[type=number],input[type=text],input[type=email],input[type=password],input[type=url],textarea{font:600 14px var(--font);padding:7px 10px;border:1.5px solid var(--garis);border-radius:var(--r-sm);background:var(--putih);color:var(--arang)}
 .wadah-peta{position:relative;height:calc(100vh - 72px - 74px - 58px);min-height:520px}
-.peta{position:absolute;inset:0;background:#DCE9EF}
-.leaflet-container{font-family:var(--font)!important;background:#DCE9EF}
+.peta{position:absolute;inset:0;background:#AAD3DF}
+.leaflet-container{font-family:var(--font)!important;background:#AAD3DF}
 .legenda{position:absolute;left:12px;bottom:12px;z-index:500;background:var(--putih);border-radius:var(--r);box-shadow:var(--bayang);border:1px solid var(--garis);max-width:280px;font-size:12.5px}
 .legenda summary{padding:10px 14px;font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
 .legenda summary::-webkit-details-marker{display:none}

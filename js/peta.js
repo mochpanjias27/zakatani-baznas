@@ -24,12 +24,12 @@
       map.attributionControl.addAttribution('Batas provinsi: GeoJSON terbuka (perlu verifikasi BIG/BPS)');
     }
     let pilih = ZT.CONFIG.basemapPilihan;
-    if (pilih === 'carto' && !ZT.CONFIG.kunciCarto) pilih = 'esri'; // tanpa kunci CARTO menampilkan tanda air
-    const bm0 = ZT.CONFIG.basemaps[pilih] || ZT.CONFIG.basemaps.esri;
+    if (pilih === 'carto' && !ZT.CONFIG.kunciCarto) pilih = 'osm'; // tanpa kunci CARTO menampilkan tanda air
+    const bm0 = ZT.CONFIG.basemaps[pilih] || ZT.CONFIG.basemaps.osm;
     const bm = Object.assign({}, bm0, { url: bm0.url.replace('KUNCI', encodeURIComponent(ZT.CONFIG.kunciCarto || '')) });
     const ubin = L.tileLayer(bm.url, { attribution: bm.atribusi, subdomains: bm.subdomains || 'abc', maxZoom: bm.maxZoom || 18, maxNativeZoom: bm.maxZoom || 18 });
     let ubinOk = false;
-    ubin.once('tileload', () => { ubinOk = true; if (lapisBatas) lapisBatas.setStyle({ fillOpacity: 0, color: '#8C8466', weight: 0.7 }); });
+    ubin.once('tileload', () => { ubinOk = true; if (lapisBatas) lapisBatas.setStyle({ fillOpacity: 0, opacity: 0 }); });
     ubin.addTo(map); ubin.bringToBack();
     // bila ubin tidak bisa dimuat (luring / diblokir), tetap memakai batas provinsi
     map.on('unload', () => ubin.off());

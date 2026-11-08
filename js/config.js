@@ -17,9 +17,9 @@ ZT.CONFIG = {
 
   // Basemap daring (dipakai bila bisa dimuat). Jika diblokir/luring,
   // peta otomatis memakai batas provinsi dari berkasBatas.
-  // Catatan: ubin CARTO kini butuh API key, jadi bawaan memakai Esri Light Gray (tanpa kunci).
-  // Pilihan lain tanpa kunci: 'osm'. Untuk CARTO dengan kunci, isi url sendiri.
-  basemapPilihan: 'esri',
+  // Bawaan: OpenStreetMap standar (berwarna, berlabel kota). Pilihan lain tanpa kunci: 'esri' (abu-abu terang).
+  // Ubin CARTO kini butuh API key. Untuk CARTO dengan kunci, isi url sendiri.
+  basemapPilihan: 'osm',
   // Isi kunci gratis dari https://carto.com/basemaps/apikey lalu ganti basemapPilihan ke 'carto' (Positron, sesuai brief).
   kunciCarto: '',
   basemaps: {
@@ -32,8 +32,8 @@ ZT.CONFIG = {
       atribusi: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>', maxZoom: 19, subdomains: ''
     },
     osm: {
-      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      atribusi: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19, subdomains: 'abc'
+      url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+      atribusi: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19, subdomains: ''
     }
   },
 
