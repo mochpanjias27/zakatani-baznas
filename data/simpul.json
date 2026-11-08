@@ -1,0 +1,2262 @@
+{
+ "meta": {
+  "versi": "0.1.0",
+  "diperbarui": "2026-11-08",
+  "catatan": "Data awal prototipe ZakaTani. Angka berstatus \"contoh\" bersifat sementara."
+ },
+ "parameter": {
+  "tarif_per_tonkm": {
+   "nilai": 1500,
+   "satuan": "Rp/ton-km",
+   "status": "contoh",
+   "label": "Tarif angkut"
+  },
+  "faktor_jalan": {
+   "nilai": 1.3,
+   "satuan": "×",
+   "status": "contoh",
+   "label": "Faktor jalan"
+  },
+  "ongkos_bulog_per_ton": {
+   "nilai": 1000000,
+   "satuan": "Rp/ton",
+   "status": "contoh",
+   "label": "Ongkos tambahan Bulog"
+  },
+  "radius_penggilingan_km": {
+   "nilai": 100,
+   "satuan": "km",
+   "status": "contoh",
+   "label": "Radius penggilingan"
+  },
+  "jendela_simpan_bulan": {
+   "nilai": 6,
+   "satuan": "bulan",
+   "status": "contoh",
+   "label": "Lama simpan gabah maksimum"
+  },
+  "kapasitas_bulog_ton": {
+   "nilai": null,
+   "satuan": "ton",
+   "status": "contoh",
+   "label": "Batas pasokan Bulog (kosong = tak terbatas)"
+  }
+ },
+ "simpul": [
+  {
+   "desa": "Cimanggu",
+   "kecamatan": "Cikembar",
+   "kabupaten": "Kab. Sukabumi",
+   "provinsi": "Jawa Barat",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 133.7,
+   "musim_panen": [
+    3,
+    4,
+    8
+   ],
+   "stok_simpan_ton": 20,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "kapasitas_ton": "asli",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "ANTARA Megapolitan (2025): Lumbung Pangan Baznas di Sukabumi siapkan 133,7 ton beras zakat fitrah",
+     "url": "https://megapolitan.antaranews.com/berita/375489/lumbung-pangan-baznas-di-sukabumi-siapkan-1337-ton-beras-zakat-fitrah-untuk-didistribusikan"
+    },
+    {
+     "label": "BAZNAS Jabar: Koperasi Lumbung Pangan Sukabumi kirim 3.200 karung beras zakat fitrah ke BAZNAS RI",
+     "url": "https://www.baznasjabar.org/news/koperasi-lumbung-pangan-sukabumi-salurkan-3.200-karung-beras-zakat-fitrah-ke-baznas"
+    },
+    {
+     "label": "Inayah dkk. (2026), Jurnal Kommunity Online: Evaluasi CIPP Lumbung Pangan, Kelompok Berkah Tani Cimanggu",
+     "url": "https://journal.uinjkt.ac.id/index.php/jko/article/view/50579"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Padi organik; penggilingan + koperasi; beras \"Raos\". Kapasitas = 133,7 ton beras zakat fitrah 1446 H yang disiapkan.",
+   "jenis": "lumbung",
+   "lat": -7.06667,
+   "lon": 106.7,
+   "presisi_lokasi": "kabupaten",
+   "id": "L01",
+   "nama": "Lumbung Pangan Sukabumi"
+  },
+  {
+   "desa": null,
+   "kecamatan": "Petir & Pamarayan",
+   "kabupaten": "Kab. Serang",
+   "provinsi": "Banten",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": 2019,
+   "kapasitas_ton": 90,
+   "musim_panen": [
+    3,
+    4,
+    8
+   ],
+   "stok_simpan_ton": 15,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "tahun_mulai": "asli",
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Chanel Muslim: BAZNAS buka sekolah tani organik di Serang (pengembangan Lumbung Pangan 2019)",
+     "url": "https://chanelmuslim.com/berita/tingkatkan-kualitas-petani-baznas-buka-sekolah-tani-organik-di-serang"
+    },
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Penggilingan; lokasi awal 2019; pemasok zakat fitrah 2026.",
+   "jenis": "lumbung",
+   "lat": -6.15,
+   "lon": 106.0,
+   "presisi_lokasi": "kabupaten",
+   "id": "L02",
+   "nama": "Lumbung Pangan Serang"
+  },
+  {
+   "desa": "Cikalong",
+   "kecamatan": "Cilamaya Wetan",
+   "kabupaten": "Kab. Karawang",
+   "provinsi": "Jawa Barat",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": 23,
+   "luas_ha": 23.5,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 50,
+   "musim_panen": [
+    3,
+    4,
+    8
+   ],
+   "stok_simpan_ton": 8,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "petani": "asli",
+    "luas_ha": "asli",
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Chanel Muslim: Taswan, petani Lumbung Pangan BAZNAS di Desa Cikalong, Cilamaya Wetan",
+     "url": "https://chanelmuslim.com/info/taswan-petani-lumbung-pangan-baznas-raup-rp30-juta-sekali-panen"
+    },
+    {
+     "label": "Chanel Muslim: BAZNAS salurkan zakat fitrah ke 34 provinsi (lumbung Karawang, Sukabumi, Serang, Lampung)",
+     "url": "https://chanelmuslim.com/berita/baznas-salurkan-zakat-fitrah-ke-34-provinsi-se-indonesia"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [
+    "petani",
+    "luas_ha"
+   ],
+   "catatan": "Kelompok Tani Bina Mandiri. Angka petani & luas dari brief tim; URL angka perlu dilengkapi.",
+   "jenis": "lumbung",
+   "lat": -6.26667,
+   "lon": 107.41667,
+   "presisi_lokasi": "kabupaten",
+   "id": "L03",
+   "nama": "Lumbung Pangan Karawang"
+  },
+  {
+   "desa": "Kampung Melayu Barat",
+   "kecamatan": "Teluknaga",
+   "kabupaten": "Kab. Tangerang",
+   "provinsi": "Banten",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI + BAZNAS Kab. Tangerang",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": 2025,
+   "kapasitas_ton": 40,
+   "musim_panen": [
+    3,
+    4,
+    8
+   ],
+   "stok_simpan_ton": 5,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "tahun_mulai": "asli",
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [
+    "tahun_mulai"
+   ],
+   "catatan": "Diresmikan Juli 2025 (brief tim; URL perlu dilengkapi).",
+   "jenis": "lumbung",
+   "lat": -6.2,
+   "lon": 106.46667,
+   "presisi_lokasi": "kabupaten",
+   "id": "L04",
+   "nama": "Lumbung Pangan Teluknaga"
+  },
+  {
+   "desa": "Kwala Gunung",
+   "kecamatan": "Datuk Lima Puluh",
+   "kabupaten": "Kab. Batu Bara",
+   "provinsi": "Sumatera Utara",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI + BAZNAS Prov. Sumut + BAZNAS Kab. Batu Bara",
+   "petani": 52,
+   "luas_ha": 32,
+   "panen_ton": 150,
+   "tahun_mulai": 2018,
+   "kapasitas_ton": 80,
+   "musim_panen": [
+    3,
+    4,
+    8,
+    9
+   ],
+   "stok_simpan_ton": 10,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "petani": "asli",
+    "luas_ha": "asli",
+    "panen_ton": "asli",
+    "tahun_mulai": "asli",
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "RRI (Juli 2026): Panen raya 150 ton padi dari 32 ha di Desa Kwala Gunung, Batu Bara",
+     "url": "https://rri.co.id/regional/2596290/sukses-panen-raya-kelompok-petani-binaan-baznas-di-sumut-tunaikan-zakat-rp16-juta"
+    },
+    {
+     "label": "RM.id (23 Jul 2026): BAZNAS panen raya 150 ton GKP di Batu Bara; 21 lokasi di 11 provinsi",
+     "url": "https://rm.id/baca-berita/humaniora/318830/baznas-panen-raya-150-ton-padi-perkuat-ketahanan-pangan-di-batu-bara"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [
+    "petani"
+   ],
+   "catatan": "Panen 150 ton gabah kering panen (GKP). Kapasitas beras contoh ≈ rendemen ~55% dari GKP.",
+   "jenis": "lumbung",
+   "lat": 3.16166,
+   "lon": 99.52652,
+   "presisi_lokasi": "kabupaten",
+   "id": "L05",
+   "nama": "Lumbung Pangan Batu Bara"
+  },
+  {
+   "desa": "Gunung Malang & Seruni",
+   "kecamatan": "Pringgabaya",
+   "kabupaten": "Kab. Lombok Timur",
+   "provinsi": "Nusa Tenggara Barat",
+   "komoditas": "jagung",
+   "pengelola": "BAZNAS RI",
+   "petani": 32,
+   "luas_ha": 50,
+   "panen_ton": 400,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "petani": "asli",
+    "luas_ha": "asli",
+    "panen_ton": "asli"
+   },
+   "sumber": [
+    {
+     "label": "RRI Mataram: Kelompok Tani Barokah Zakat, Desa Gunung Malang, Pringgabaya",
+     "url": "https://rri.co.id/mataram/kesehatan/2609572/baznas-lotim-berikan-kartu-asuransi-perkuat-perlindungan-penerima-zakat"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [
+    "petani",
+    "luas_ha",
+    "panen_ton"
+   ],
+   "catatan": "Kelompok Tani Barokah Zakat. Panen = potensi 400 ton jagung (bukan beras; tidak masuk model beras).",
+   "jenis": "lumbung",
+   "lat": -8.53333,
+   "lon": 116.53333,
+   "presisi_lokasi": "kabupaten",
+   "id": "L06",
+   "nama": "Lumbung Pangan Lombok Timur (jagung)"
+  },
+  {
+   "desa": null,
+   "kecamatan": "Masbagik & Sikur",
+   "kabupaten": "Kab. Lombok Timur",
+   "provinsi": "Nusa Tenggara Barat",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": 120,
+   "luas_ha": 25,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 45,
+   "musim_panen": [
+    3,
+    4
+   ],
+   "stok_simpan_ton": 6,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "petani": "asli",
+    "luas_ha": "asli",
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [
+    "petani",
+    "luas_ha"
+   ],
+   "catatan": "Angka petani & luas dari brief tim; URL perlu dilengkapi.",
+   "jenis": "lumbung",
+   "lat": -8.53333,
+   "lon": 116.53333,
+   "presisi_lokasi": "kabupaten",
+   "id": "L07",
+   "nama": "Lumbung Pangan Lombok Timur (padi)"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Purbalingga",
+   "provinsi": "Jawa Tengah",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 70,
+   "musim_panen": [
+    3,
+    4,
+    8
+   ],
+   "stok_simpan_ton": 10,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Pemasok zakat fitrah 2026.",
+   "jenis": "lumbung",
+   "lat": -7.28417,
+   "lon": 109.35028,
+   "presisi_lokasi": "kabupaten",
+   "id": "L08",
+   "nama": "Lumbung Pangan Purbalingga"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Pesawaran",
+   "provinsi": "Lampung",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 70,
+   "musim_panen": [
+    3,
+    4,
+    8,
+    9
+   ],
+   "stok_simpan_ton": 10,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Pemasok zakat fitrah 2026.",
+   "jenis": "lumbung",
+   "lat": -5.4298,
+   "lon": 105.17899,
+   "presisi_lokasi": "kabupaten",
+   "id": "L09",
+   "nama": "Lumbung Pangan Pesawaran"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Polewali Mandar",
+   "provinsi": "Sulawesi Barat",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 60,
+   "musim_panen": [
+    4,
+    5,
+    9
+   ],
+   "stok_simpan_ton": 8,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Pemasok zakat fitrah 2026.",
+   "jenis": "lumbung",
+   "lat": -3.3,
+   "lon": 119.16667,
+   "presisi_lokasi": "kabupaten",
+   "id": "L10",
+   "nama": "Lumbung Pangan Polewali Mandar"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Garut",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Komoditas belum ada data.",
+   "jenis": "lumbung",
+   "lat": -7.38333,
+   "lon": 107.76667,
+   "presisi_lokasi": "kabupaten",
+   "id": "L11",
+   "nama": "Lumbung Pangan Garut"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Sleman",
+   "provinsi": "DI Yogyakarta",
+   "komoditas": null,
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Komoditas belum ada data.",
+   "jenis": "lumbung",
+   "lat": -7.68167,
+   "lon": 110.32333,
+   "presisi_lokasi": "kabupaten",
+   "id": "L12",
+   "nama": "Lumbung Pangan Sleman"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Bandung",
+   "provinsi": "Jawa Barat",
+   "komoditas": "hortikultura",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Mitra pesantren.",
+   "jenis": "lumbung",
+   "lat": -7.1,
+   "lon": 107.6,
+   "presisi_lokasi": "kabupaten",
+   "id": "L13",
+   "nama": "Lumbung Pangan Al-Ittifaq"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Pandeglang",
+   "provinsi": "Banten",
+   "komoditas": null,
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Komoditas belum ada data.",
+   "jenis": "lumbung",
+   "lat": -6.63333,
+   "lon": 105.75,
+   "presisi_lokasi": "kabupaten",
+   "id": "L14",
+   "nama": "Lumbung Pangan Pandeglang"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": null,
+   "provinsi": "Papua",
+   "komoditas": null,
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Centroid poligon provinsi: dataset 38 provinsi denyherianto (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Kabupaten belum diketahui; titik = centroid Provinsi Papua (presisi provinsi).",
+   "jenis": "lumbung",
+   "lat": -2.6324,
+   "lon": 138.5687,
+   "presisi_lokasi": "provinsi",
+   "id": "L15",
+   "nama": "Lumbung Pangan Papua"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Sragen",
+   "provinsi": "Jawa Tengah",
+   "komoditas": "hortikultura",
+   "pengelola": "BAZNAS Kab. Sragen",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Khasanah & Triatmo (2025), JRMDK: Lumbung Pangan Greenhouse Melon BAZNAS Sragen",
+     "url": "https://ejournal.uin-suska.ac.id/index.php/jrmdk/article/view/35858"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Melon greenhouse.",
+   "jenis": "lumbung",
+   "lat": -7.41278,
+   "lon": 110.935,
+   "presisi_lokasi": "kabupaten",
+   "id": "L16",
+   "nama": "Lumbung Pangan Sragen (melon greenhouse)"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Barito Kuala",
+   "provinsi": "Kalimantan Selatan",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS Prov. Kalsel",
+   "petani": null,
+   "luas_ha": 100,
+   "panen_ton": 279.4,
+   "tahun_mulai": 2022,
+   "kapasitas_ton": 120,
+   "musim_panen": [
+    8,
+    9
+   ],
+   "stok_simpan_ton": 25,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "luas_ha": "asli",
+    "panen_ton": "asli",
+    "tahun_mulai": "asli",
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Shinta (2025), skripsi UIN Antasari: Lumbung Pangan Berkah BAZNAS Kalsel, Barito Kuala",
+     "url": "https://idr.uin-antasari.ac.id/29883/7/BAB%20IV.pdf"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Lumbung Pangan Berkah, 100 ha; panen 279.442 kg (skripsi, data BAZNAS Kalsel).",
+   "jenis": "lumbung",
+   "lat": -3.08333,
+   "lon": 114.61667,
+   "presisi_lokasi": "kabupaten",
+   "id": "L17",
+   "nama": "Lumbung Pangan Berkah Barito Kuala"
+  },
+  {
+   "desa": "Kemuning Muda",
+   "kecamatan": "Bungaraya",
+   "kabupaten": "Kab. Siak",
+   "provinsi": "Riau",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS Kab. Siak + BAZNAS Prov. Riau",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 50,
+   "musim_panen": [
+    3,
+    8
+   ],
+   "stok_simpan_ton": 8,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Puskas BAZNAS: zakat pertanian & panen di Bungaraya, Siak",
+     "url": "https://new.puskasbaznas.com/news/649-farmers-pay-zakat-to-baznas"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "",
+   "jenis": "lumbung",
+   "lat": 0.97453,
+   "lon": 102.01355,
+   "presisi_lokasi": "kabupaten",
+   "id": "L18",
+   "nama": "Lumbung Pangan Siak"
+  },
+  {
+   "desa": "Barombong",
+   "kecamatan": null,
+   "kabupaten": "Kab. Bulukumba",
+   "provinsi": "Sulawesi Selatan",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS Kab. Bulukumba",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": 2024,
+   "kapasitas_ton": 40,
+   "musim_panen": [
+    4,
+    5,
+    9
+   ],
+   "stok_simpan_ton": 5,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "tahun_mulai": "asli",
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [
+    "tahun_mulai"
+   ],
+   "catatan": "Mulai Oktober 2024 (brief tim; URL perlu dilengkapi).",
+   "jenis": "lumbung",
+   "lat": -5.41667,
+   "lon": 120.23333,
+   "presisi_lokasi": "kabupaten",
+   "id": "L19",
+   "nama": "Lumbung Pangan Bulukumba"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Sumedang",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Sumedang",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Komoditas belum ada data.",
+   "jenis": "lumbung",
+   "lat": -6.81667,
+   "lon": 107.98333,
+   "presisi_lokasi": "kabupaten",
+   "id": "L20",
+   "nama": "Lumbung Pangan Sumedang"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Cianjur",
+   "provinsi": "Jawa Barat",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS Kab. Cianjur",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": 50,
+   "musim_panen": [
+    3,
+    4,
+    8
+   ],
+   "stok_simpan_ton": 8,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {
+    "kapasitas_ton": "contoh",
+    "musim_panen": "contoh",
+    "stok_simpan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "ANTARA Jogja: Baznas memberdayakan petani melalui zakat fitrah (Kelompok Tani Kelewih, Cianjur)",
+     "url": "https://jogja.antaranews.com/berita/357593/baznas-memberdayakan-petani-melalui-zakat-fitrah"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Pemasok zakat fitrah (Kelompok Tani Kelewih).",
+   "jenis": "lumbung",
+   "lat": -6.7725,
+   "lon": 107.08306,
+   "presisi_lokasi": "kabupaten",
+   "id": "L21",
+   "nama": "Lumbung Pangan Cianjur"
+  },
+  {
+   "desa": "Cimanggu",
+   "kecamatan": "Cikembar",
+   "kabupaten": "Kab. Sukabumi",
+   "provinsi": "Jawa Barat",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "ANTARA Megapolitan (2025): Lumbung Pangan Baznas di Sukabumi siapkan 133,7 ton beras zakat fitrah",
+     "url": "https://megapolitan.antaranews.com/berita/375489/lumbung-pangan-baznas-di-sukabumi-siapkan-1337-ton-beras-zakat-fitrah-untuk-didistribusikan"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Terkait Lumbung Pangan Sukabumi (L01).",
+   "jenis": "penggilingan",
+   "id": "G01",
+   "nama": "Penggilingan & Koperasi Lumbung Pangan Sukabumi",
+   "lat": -7.06667,
+   "lon": 106.7,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": "Petir & Pamarayan",
+   "kabupaten": "Kab. Serang",
+   "provinsi": "Banten",
+   "komoditas": "padi",
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Chanel Muslim: BAZNAS buka sekolah tani organik di Serang (pengembangan Lumbung Pangan 2019)",
+     "url": "https://chanelmuslim.com/berita/tingkatkan-kualitas-petani-baznas-buka-sekolah-tani-organik-di-serang"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Terkait Lumbung Pangan Serang (L02).",
+   "jenis": "penggilingan",
+   "id": "G02",
+   "nama": "Penggilingan Lumbung Pangan Serang",
+   "lat": -6.15,
+   "lon": 106.0,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Jakarta Timur",
+   "provinsi": "DKI Jakarta",
+   "komoditas": null,
+   "pengelola": "BAZNAS RI",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 320,
+   "tingkat_baznas": "ri",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "B00",
+   "nama": "BAZNAS RI",
+   "lat": -6.2521,
+   "lon": 106.884,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Bandung",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Jawa Barat",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 60,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP01",
+   "nama": "BAZNAS Provinsi Jawa Barat",
+   "lat": -6.9175,
+   "lon": 107.62444,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Serang",
+   "provinsi": "Banten",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Banten",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 40,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP02",
+   "nama": "BAZNAS Provinsi Banten",
+   "lat": -6.12563,
+   "lon": 106.14999,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Medan",
+   "provinsi": "Sumatera Utara",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Sumatera Utara",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 35,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP03",
+   "nama": "BAZNAS Provinsi Sumatera Utara",
+   "lat": 3.65,
+   "lon": 98.66667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Mataram",
+   "provinsi": "Nusa Tenggara Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi NTB",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 25,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP04",
+   "nama": "BAZNAS Provinsi NTB",
+   "lat": -8.5833,
+   "lon": 116.1167,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Semarang",
+   "provinsi": "Jawa Tengah",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Jawa Tengah",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 50,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP05",
+   "nama": "BAZNAS Provinsi Jawa Tengah",
+   "lat": -7.03333,
+   "lon": 110.38333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Bandar Lampung",
+   "provinsi": "Lampung",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Lampung",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 25,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP06",
+   "nama": "BAZNAS Provinsi Lampung",
+   "lat": -5.41667,
+   "lon": 105.25,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Mamuju",
+   "provinsi": "Sulawesi Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Sulawesi Barat",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 15,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP07",
+   "nama": "BAZNAS Provinsi Sulawesi Barat",
+   "lat": -2.5,
+   "lon": 119.41667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Yogyakarta",
+   "provinsi": "DI Yogyakarta",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi DI Yogyakarta",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 20,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP08",
+   "nama": "BAZNAS Provinsi DI Yogyakarta",
+   "lat": -7.8,
+   "lon": 110.375,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Jayapura",
+   "provinsi": "Papua",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Papua",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 15,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP09",
+   "nama": "BAZNAS Provinsi Papua",
+   "lat": -2.64647,
+   "lon": 140.77779,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Banjar Baru",
+   "provinsi": "Kalimantan Selatan",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Kalimantan Selatan",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 25,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP10",
+   "nama": "BAZNAS Provinsi Kalimantan Selatan",
+   "lat": -3.41667,
+   "lon": 114.83333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Pekanbaru",
+   "provinsi": "Riau",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Riau",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 25,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP11",
+   "nama": "BAZNAS Provinsi Riau",
+   "lat": 0.53333,
+   "lon": 101.46667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Makassar",
+   "provinsi": "Sulawesi Selatan",
+   "komoditas": null,
+   "pengelola": "BAZNAS Provinsi Sulawesi Selatan",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 35,
+   "tingkat_baznas": "provinsi",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BP12",
+   "nama": "BAZNAS Provinsi Sulawesi Selatan",
+   "lat": -5.15,
+   "lon": 119.45,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Sukabumi",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Sukabumi",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 25,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK01",
+   "nama": "BAZNAS Kab. Sukabumi",
+   "lat": -7.06667,
+   "lon": 106.7,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Serang",
+   "provinsi": "Banten",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Serang",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 20,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK02",
+   "nama": "BAZNAS Kab. Serang",
+   "lat": -6.15,
+   "lon": 106.0,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Karawang",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Karawang",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 25,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK03",
+   "nama": "BAZNAS Kab. Karawang",
+   "lat": -6.26667,
+   "lon": 107.41667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Tangerang",
+   "provinsi": "Banten",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Tangerang",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 30,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK04",
+   "nama": "BAZNAS Kab. Tangerang",
+   "lat": -6.2,
+   "lon": 106.46667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Batu Bara",
+   "provinsi": "Sumatera Utara",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Batu Bara",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 12,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK05",
+   "nama": "BAZNAS Kab. Batu Bara",
+   "lat": 3.16166,
+   "lon": 99.52652,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Lombok Timur",
+   "provinsi": "Nusa Tenggara Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Lombok Timur",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 20,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK06",
+   "nama": "BAZNAS Kab. Lombok Timur",
+   "lat": -8.53333,
+   "lon": 116.53333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Purbalingga",
+   "provinsi": "Jawa Tengah",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Purbalingga",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 15,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK07",
+   "nama": "BAZNAS Kab. Purbalingga",
+   "lat": -7.28417,
+   "lon": 109.35028,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Pesawaran",
+   "provinsi": "Lampung",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Pesawaran",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 10,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK08",
+   "nama": "BAZNAS Kab. Pesawaran",
+   "lat": -5.4298,
+   "lon": 105.17899,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Polewali Mandar",
+   "provinsi": "Sulawesi Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Polewali Mandar",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 12,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK09",
+   "nama": "BAZNAS Kab. Polewali Mandar",
+   "lat": -3.3,
+   "lon": 119.16667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Garut",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Garut",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 25,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK10",
+   "nama": "BAZNAS Kab. Garut",
+   "lat": -7.38333,
+   "lon": 107.76667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Sleman",
+   "provinsi": "DI Yogyakarta",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Sleman",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 18,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK11",
+   "nama": "BAZNAS Kab. Sleman",
+   "lat": -7.68167,
+   "lon": 110.32333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Bandung",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Bandung",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 30,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK12",
+   "nama": "BAZNAS Kab. Bandung",
+   "lat": -7.1,
+   "lon": 107.6,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Pandeglang",
+   "provinsi": "Banten",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Pandeglang",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 15,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK13",
+   "nama": "BAZNAS Kab. Pandeglang",
+   "lat": -6.63333,
+   "lon": 105.75,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Sragen",
+   "provinsi": "Jawa Tengah",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Sragen",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 15,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK14",
+   "nama": "BAZNAS Kab. Sragen",
+   "lat": -7.41278,
+   "lon": 110.935,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Barito Kuala",
+   "provinsi": "Kalimantan Selatan",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Barito Kuala",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 10,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK15",
+   "nama": "BAZNAS Kab. Barito Kuala",
+   "lat": -3.08333,
+   "lon": 114.61667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Siak",
+   "provinsi": "Riau",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Siak",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 12,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK16",
+   "nama": "BAZNAS Kab. Siak",
+   "lat": 0.97453,
+   "lon": 102.01355,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Bulukumba",
+   "provinsi": "Sulawesi Selatan",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Bulukumba",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 12,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK17",
+   "nama": "BAZNAS Kab. Bulukumba",
+   "lat": -5.41667,
+   "lon": 120.23333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Sumedang",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Sumedang",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 15,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK18",
+   "nama": "BAZNAS Kab. Sumedang",
+   "lat": -6.81667,
+   "lon": 107.98333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Cianjur",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "BAZNAS Kab. Cianjur",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": 22,
+   "tingkat_baznas": "kabupaten",
+   "status": {
+    "kebutuhan_ton": "contoh"
+   },
+   "sumber": [
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Titik = acuan kab/kota tempat kantor; alamat resmi perlu diambil dari situs *.baznas.go.id.",
+   "jenis": "baznas",
+   "id": "BK19",
+   "nama": "BAZNAS Kab. Cianjur",
+   "lat": -6.7725,
+   "lon": 107.08306,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Jakarta Selatan",
+   "provinsi": "DKI Jakarta",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [
+    {
+     "label": "Chanel Muslim: BAZNAS salurkan zakat fitrah ke 34 provinsi (lumbung Karawang, Sukabumi, Serang, Lampung)",
+     "url": "https://chanelmuslim.com/berita/baznas-salurkan-zakat-fitrah-ke-34-provinsi-se-indonesia"
+    },
+    {
+     "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
+     "url": "https://github.com/eppofahmi/geojson-indonesia"
+    }
+   ],
+   "perlu_verifikasi": [],
+   "catatan": "Pemasok cadangan dalam model. Diasumsikan memasok dari gudang setempat dengan ongkos rata per ton (parameter).",
+   "jenis": "bulog",
+   "id": "BL01",
+   "nama": "Perum Bulog (kantor pusat)",
+   "lat": -6.266,
+   "lon": 106.8135,
+   "presisi_lokasi": "kabupaten"
+  }
+ ],
+ "alur": [
+  {
+   "dari": "L01",
+   "ke": "B00",
+   "status": "terdokumentasi",
+   "keterangan": "Beras zakat fitrah 1446 H (133,7 ton disiapkan; 3.200 karung ≈16 ton dikirim ke BAZNAS RI)",
+   "sumber": [
+    {
+     "label": "ANTARA Megapolitan (2025): Lumbung Pangan Baznas di Sukabumi siapkan 133,7 ton beras zakat fitrah",
+     "url": "https://megapolitan.antaranews.com/berita/375489/lumbung-pangan-baznas-di-sukabumi-siapkan-1337-ton-beras-zakat-fitrah-untuk-didistribusikan"
+    },
+    {
+     "label": "BAZNAS Jabar: Koperasi Lumbung Pangan Sukabumi kirim 3.200 karung beras zakat fitrah ke BAZNAS RI",
+     "url": "https://www.baznasjabar.org/news/koperasi-lumbung-pangan-sukabumi-salurkan-3.200-karung-beras-zakat-fitrah-ke-baznas"
+    }
+   ]
+  },
+  {
+   "dari": "L02",
+   "ke": "B00",
+   "status": "tujuan_perlu_verifikasi",
+   "keterangan": "Pemasok zakat fitrah 2026; tujuan diasumsikan BAZNAS RI",
+   "sumber": [
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    }
+   ]
+  },
+  {
+   "dari": "L08",
+   "ke": "B00",
+   "status": "tujuan_perlu_verifikasi",
+   "keterangan": "Pemasok zakat fitrah 2026; tujuan diasumsikan BAZNAS RI",
+   "sumber": [
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    }
+   ]
+  },
+  {
+   "dari": "L09",
+   "ke": "B00",
+   "status": "tujuan_perlu_verifikasi",
+   "keterangan": "Pemasok zakat fitrah 2026; tujuan diasumsikan BAZNAS RI",
+   "sumber": [
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    }
+   ]
+  },
+  {
+   "dari": "L10",
+   "ke": "B00",
+   "status": "tujuan_perlu_verifikasi",
+   "keterangan": "Pemasok zakat fitrah 2026; tujuan diasumsikan BAZNAS RI",
+   "sumber": [
+    {
+     "label": "RM.id (26 Feb 2026): BAZNAS siapkan beras zakat fitrah melalui lumbung pangan binaan",
+     "url": "https://rm.id/baca-berita/nasional/302114/baznas-siapkan-beras-zakat-fitrah-melalui-lumbung-pangan-binaan"
+    }
+   ]
+  }
+ ],
+ "statistik": {
+  "lokasi_nasional": {
+   "nilai": 21,
+   "provinsi": 11,
+   "label": "21 lokasi di 11 provinsi sejak 2018",
+   "sumber": [
+    {
+     "label": "RM.id (23 Jul 2026): BAZNAS panen raya 150 ton GKP di Batu Bara; 21 lokasi di 11 provinsi",
+     "url": "https://rm.id/baca-berita/humaniora/318830/baznas-panen-raya-150-ton-padi-perkuat-ketahanan-pangan-di-batu-bara"
+    }
+   ]
+  },
+  "penerima_zakat_fitrah": {
+   "nilai": 675000,
+   "label": "Target penerima zakat fitrah BAZNAS RI (jiwa, 34 provinsi)",
+   "sumber": [
+    {
+     "label": "ANTARA Kupang: Baznas siapkan 168.750 paket zakat fitrah, target 675.000 jiwa di 34 provinsi",
+     "url": "https://kupang.antaranews.com/berita/152497/baznas-menyiapkan-168750-paket-zakat-fitrah-untuk-mustahik-se-indonesia"
+    }
+   ]
+  },
+  "petani_binaan_nasional": {
+   "nilai": 735,
+   "label": "Petani binaan Lumbung Pangan BAZNAS (2025)",
+   "sumber": [
+    {
+     "label": "ANTARA Megapolitan (2025): Lumbung Pangan Baznas di Sukabumi siapkan 133,7 ton beras zakat fitrah",
+     "url": "https://megapolitan.antaranews.com/berita/375489/lumbung-pangan-baznas-di-sukabumi-siapkan-1337-ton-beras-zakat-fitrah-untuk-didistribusikan"
+    }
+   ]
+  },
+  "petani_muzaki": {
+   "nilai": 80,
+   "label": "Petani binaan menjadi muzaki (2022–2024)",
+   "sumber": [
+    {
+     "label": "ANTARA Megapolitan (indeks berita BAZNAS): Program Lumbung Pangan 2022–2024 cetak 80 muzaki baru",
+     "url": "https://megapolitan.antaranews.com/tag/baznas/39"
+    }
+   ]
+  }
+ },
+ "dampak": {
+  "judul": "Petani binaan yang menjadi muzaki per lokasi (2022–2024)",
+  "data": [
+   {
+    "lokasi": "Sukabumi",
+    "nilai": 40
+   },
+   {
+    "lokasi": "Sragen",
+    "nilai": 31
+   },
+   {
+    "lokasi": "Garut",
+    "nilai": 5
+   },
+   {
+    "lokasi": "Kalimantan Selatan",
+    "nilai": 3
+   },
+   {
+    "lokasi": "Sleman",
+    "nilai": 1
+   }
+  ],
+  "status": "asli",
+  "sumber": [
+   {
+    "label": "ANTARA Megapolitan (indeks berita BAZNAS): Program Lumbung Pangan 2022–2024 cetak 80 muzaki baru",
+    "url": "https://megapolitan.antaranews.com/tag/baznas/39"
+   }
+  ],
+  "catatan": "Rincian per lokasi dari brief tim (data publik); total 80 sesuai berita ANTARA. Tautan menuju indeks berita; URL artikel perlu dilengkapi."
+ }
+}
