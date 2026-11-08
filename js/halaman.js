@@ -145,7 +145,7 @@
     const baris = Object.entries(P).map(([k, p]) => `<tr><td>${U.esc(p.label || k)}</td><td class="angka">${p.nilai == null ? 'tak terbatas' : U.angka(p.nilai, 2) + ' ' + U.esc(p.satuan || '')}</td><td>${p.status === 'contoh' ? U.lencanaContoh() : 'asli'}</td></tr>`).join('');
     U.$('#isi-tentang').innerHTML = `
       <h2 style="margin-top:0">Tujuan riset</h2>
-      <p>ZakaTani dilampirkan pada proposal <b>Beasiswa Riset BAZNAS 2026, Kategori Kelompok Riset, Klaster B.7 Lumbung Pangan</b>. Riset ini memetakan dan menganalisis rantai pasok Lumbung Pangan (lumbung → penggilingan → BAZNAS penyalur → mustahik), lalu menghitung alokasi pasokan beras zakat fitrah yang paling hemat. Tujuannya membantu amil mengambil keputusan berbasis data dan memperkuat cerita inti program: <i>dari sawah mustahik ke mustahik</i>.</p>
+      <p>ZakaTani dilampirkan pada proposal <b>Beasiswa Riset BAZNAS 2026, Kategori Kelompok Riset, Klaster B.7 Lumbung Pangan</b>. Riset ini memetakan dan menganalisis rantai pasok Lumbung Pangan (lumbung → penggilingan → BAZNAS penyalur → mustahik), lalu menghitung alokasi pasokan beras zakat fitrah yang paling hemat. Tujuannya membantu amil mengambil keputusan berbasis data dan memperkuat semangat program: <i>Lumbung Pangan BAZNAS Berdaya, Umat Berjaya</i>.</p>
       <ol><li>Memetakan simpul rantai pasok beserta presisi lokasinya.</li><li>Menghitung alokasi optimal beras zakat fitrah dari lumbung ke BAZNAS.</li><li>Mengukur ketahanan rantai pasok terhadap gagal panen, jadwal Ramadan, dan perubahan kebutuhan.</li><li>Menunjukkan lokasi penggilingan baru yang paling menurunkan ongkos.</li></ol>
 
       <h2>Tim peneliti</h2>

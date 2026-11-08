@@ -1,7 +1,7 @@
 # ZakaTani — Peta & Simulasi Rantai Pasok Lumbung Pangan BAZNAS
 
 Prototipe riset untuk proposal **Beasiswa Riset BAZNAS 2026**, Kategori Kelompok Riset, **Klaster B.7 Lumbung Pangan**.
-Cerita intinya: *Dari Sawah Mustahik ke Mustahik.*
+Jargon: *Lumbung Pangan BAZNAS Berdaya, Umat Berjaya.*
 
 > Prototipe riset. Data dari sumber publik dan dapat berubah. **Bukan situs resmi BAZNAS.**
 
