@@ -48,8 +48,8 @@ python3 -m http.server 8000   # lalu buka http://localhost:8000
 ```
 Pustaka (Leaflet, javascript-lp-solver, SheetJS, jsPDF) dimuat dari CDN.
 
-## Hosting (Netlify/Vercel)
-Unggah folder ini apa adanya (tanpa build). `netlify.toml` sudah disertakan.
+## Hosting (Vercel/Netlify)
+Tanpa build. **Vercel:** Add New → Project → impor repo `zakatani-baznas` → Framework Preset: *Other* → Build Command & Output Directory dikosongkan → Deploy. `vercel.json` dan `netlify.toml` sudah disertakan.
 
 ## Supabase (opsional: penyimpanan bersama + login tim)
 1. Buat proyek Supabase (paket gratis), jalankan `docs/supabase.sql`.
