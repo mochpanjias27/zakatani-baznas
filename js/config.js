@@ -17,9 +17,24 @@ ZT.CONFIG = {
 
   // Basemap daring (dipakai bila bisa dimuat). Jika diblokir/luring,
   // peta otomatis memakai batas provinsi dari berkasBatas.
-  basemap: {
-    url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-    atribusi: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  // Catatan: ubin CARTO kini butuh API key, jadi bawaan memakai Esri Light Gray (tanpa kunci).
+  // Pilihan lain tanpa kunci: 'osm'. Untuk CARTO dengan kunci, isi url sendiri.
+  basemapPilihan: 'esri',
+  // Isi kunci gratis dari https://carto.com/basemaps/apikey lalu ganti basemapPilihan ke 'carto' (Positron, sesuai brief).
+  kunciCarto: '',
+  basemaps: {
+    esri: {
+      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+      atribusi: 'Basemap &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors', maxZoom: 16, subdomains: ''
+    },
+    carto: {
+      url: 'https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png?key=KUNCI',
+      atribusi: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>', maxZoom: 19, subdomains: ''
+    },
+    osm: {
+      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      atribusi: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19, subdomains: 'abc'
+    }
   },
 
   warna: {

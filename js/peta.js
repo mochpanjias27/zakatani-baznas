@@ -11,7 +11,7 @@
     return batasProvinsi;
   };
 
-  /** Buat peta dengan basemap batas provinsi (selalu) + ubin CARTO (bila bisa dimuat). */
+  /** Buat peta dengan basemap batas provinsi (selalu) + ubin daring (Esri/CARTO/OSM, bila bisa dimuat). */
   P.buat = (el) => {
     const map = L.map(el, { zoomControl: true, minZoom: 4, maxZoom: 13, worldCopyJump: false, zoomSnap: 0.25, attributionControl: true })
       .setView(ZT.CONFIG.pusatIndonesia, ZT.CONFIG.zoomAwal);
@@ -23,9 +23,13 @@
       }).addTo(map);
       map.attributionControl.addAttribution('Batas provinsi: GeoJSON terbuka (perlu verifikasi BIG/BPS)');
     }
-    const ubin = L.tileLayer(ZT.CONFIG.basemap.url, { attribution: ZT.CONFIG.basemap.atribusi, subdomains: 'abcd', maxZoom: 19 });
+    let pilih = ZT.CONFIG.basemapPilihan;
+    if (pilih === 'carto' && !ZT.CONFIG.kunciCarto) pilih = 'esri'; // tanpa kunci CARTO menampilkan tanda air
+    const bm0 = ZT.CONFIG.basemaps[pilih] || ZT.CONFIG.basemaps.esri;
+    const bm = Object.assign({}, bm0, { url: bm0.url.replace('KUNCI', encodeURIComponent(ZT.CONFIG.kunciCarto || '')) });
+    const ubin = L.tileLayer(bm.url, { attribution: bm.atribusi, subdomains: bm.subdomains || 'abc', maxZoom: bm.maxZoom || 18, maxNativeZoom: bm.maxZoom || 18 });
     let ubinOk = false;
-    ubin.once('tileload', () => { ubinOk = true; if (lapisBatas) lapisBatas.setStyle({ fillOpacity: 0, color: '#9C9375', weight: 0.6 }); });
+    ubin.once('tileload', () => { ubinOk = true; if (lapisBatas) lapisBatas.setStyle({ fillOpacity: 0, color: '#8C8466', weight: 0.7 }); });
     ubin.addTo(map); ubin.bringToBack();
     // bila ubin tidak bisa dimuat (luring / diblokir), tetap memakai batas provinsi
     map.on('unload', () => ubin.off());

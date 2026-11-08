@@ -51,6 +51,9 @@ Pustaka (Leaflet, javascript-lp-solver, SheetJS, jsPDF) dimuat dari CDN.
 ## Hosting (Vercel/Netlify)
 Tanpa build. **Vercel:** Add New → Project → impor repo `zakatani-baznas` → Framework Preset: *Other* → Build Command & Output Directory dikosongkan → Deploy. `vercel.json` dan `netlify.toml` sudah disertakan.
 
+## Basemap
+Bawaan: Esri World Light Gray (tanpa kunci). Ubin CARTO sejak Agustus–September 2026 wajib API key (gratis). Untuk memakai CARTO Positron: isi `kunciCarto` dan ubah `basemapPilihan` ke `'carto'` di `js/config.js`. Bila ubin daring gagal, peta tetap menampilkan batas provinsi bawaan.
+
 ## Supabase (opsional: penyimpanan bersama + login tim)
 1. Buat proyek Supabase (paket gratis), jalankan `docs/supabase.sql`.
 2. Buat akun tim di **Authentication → Users**.
