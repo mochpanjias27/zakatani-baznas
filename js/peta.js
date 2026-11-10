@@ -13,15 +13,15 @@
 
   /** Buat peta dengan basemap batas provinsi (selalu) + ubin daring (Esri/CARTO/OSM, bila bisa dimuat). */
   P.buat = (el) => {
-    const map = L.map(el, { zoomControl: true, minZoom: 4, maxZoom: 13, worldCopyJump: false, zoomSnap: 0.25, attributionControl: true })
+    const map = L.map(el, { zoomControl: true, minZoom: 3, maxZoom: 13, worldCopyJump: false, zoomSnap: 0.25, attributionControl: true })
       .setView(ZT.CONFIG.pusatIndonesia, ZT.CONFIG.zoomAwal);
     map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
+    map.fitBounds(P.BATAS_INDONESIA);
     let lapisBatas = null;
     if (batasProvinsi) {
-      lapisBatas = L.geoJSON(batasProvinsi, {
-        style: { color: '#BFB497', weight: 0.8, fillColor: '#F1ECDD', fillOpacity: 1 }, interactive: false
-      }).addTo(map);
-      map.attributionControl.addAttribution('Batas provinsi: GeoJSON terbuka (perlu verifikasi BIG/BPS)');
+      lapisBatas = L.geoJSON(batasProvinsi, { style: P.gayaBatas(), interactive: false }).addTo(map);
+      map.attributionControl.addAttribution('Batas provinsi: GeoJSON terbuka');
+      P._batas.push(lapisBatas);
     }
     let pilih = ZT.CONFIG.basemapPilihan;
     if (pilih === 'carto' && !ZT.CONFIG.kunciCarto) pilih = 'osm'; // tanpa kunci CARTO menampilkan tanda air
@@ -29,12 +29,19 @@
     const bm = Object.assign({}, bm0, { url: bm0.url.replace('KUNCI', encodeURIComponent(ZT.CONFIG.kunciCarto || '')) });
     const ubin = L.tileLayer(bm.url, { attribution: bm.atribusi, subdomains: bm.subdomains || 'abc', maxZoom: bm.maxZoom || 18, maxNativeZoom: bm.maxZoom || 18 });
     let ubinOk = false;
-    ubin.once('tileload', () => { ubinOk = true; if (lapisBatas) lapisBatas.setStyle({ fillOpacity: 0, opacity: 0 }); });
+    ubin.once('tileload', () => { ubinOk = true; if (lapisBatas) { lapisBatas._ubinOk = true; lapisBatas.setStyle({ fillOpacity: 0, opacity: 0 }); } });
     ubin.addTo(map); ubin.bringToBack();
     // bila ubin tidak bisa dimuat (luring / diblokir), tetap memakai batas provinsi
     map.on('unload', () => ubin.off());
     return { map, lapisBatas, ubinOk: () => ubinOk };
   };
+
+  P._batas = [];
+  P.gelap = () => document.documentElement.getAttribute('data-tema') === 'gelap';
+  P.gayaBatas = () => (P.gelap() ? { color: '#4D6B58', weight: 0.8, fillColor: '#1D3326', fillOpacity: 1 } : { color: '#BFB497', weight: 0.8, fillColor: '#F1ECDD', fillOpacity: 1 });
+  /** Dipanggil saat mode terang/gelap berganti (ubin daring digelapkan lewat CSS). */
+  P.temaBerubah = () => P._batas.forEach((l) => { if (!l._ubinOk) l.setStyle(P.gayaBatas()); });
+  P.BATAS_INDONESIA = [[-11.2, 94.8], [4.2, 141.2]];
 
   /* Geser piksel untuk simpul yang bertumpuk di titik yang sama (presisi kabupaten). */
   const GESER = [[0, 0], [17, 11], [-17, -11], [17, -13], [-17, 13], [26, 0], [-26, 0]];
@@ -66,22 +73,18 @@
   };
 
   P.legendaHTML = (jenis = 'peta') => {
-    const ik = (s) => ZT.I.penanda(s).html;
+    const ik = (x) => ZT.I.penanda(x).html;
     const baris = (sw, t) => `<li><span class="sw">${sw}</span>${t}</li>`;
-    let h = baris(ik({ jenis: 'lumbung', komoditas: 'padi', presisi_lokasi: 'desa' }), 'Lumbung Pangan (ikon = komoditas)')
-      + baris(ik({ jenis: 'penggilingan', presisi_lokasi: 'desa' }), 'Penggilingan / pengolahan')
-      + baris(`<span style="transform:scale(.8);display:inline-block">${ik({ jenis: 'baznas', tingkat_baznas: 'provinsi', presisi_lokasi: 'desa' })}</span>`, 'Kantor BAZNAS (RI › provinsi › kab/kota)')
-      + baris(ik({ jenis: 'bulog', presisi_lokasi: 'desa' }), 'Perum Bulog (cadangan)')
-      + baris(`<svg width="24" height="24" viewBox="-12 -12 24 24"><circle r="9" fill="#fff" stroke="#4E8F3A" stroke-width="2.2" stroke-dasharray="3 2.2"/></svg>`, 'Tepi putus-putus: lokasi hanya presisi kabupaten/provinsi');
+    let h = baris(ik({ jenis: 'lumbung', komoditas: 'padi' }), 'Lumbung pangan')
+      + baris(ik({ jenis: 'penggilingan' }), 'Penggilingan')
+      + baris(`<span style="transform:scale(.8);display:inline-block">${ik({ jenis: 'baznas', tingkat_baznas: 'provinsi' })}</span>`, 'Kantor BAZNAS')
+      + baris(ik({ jenis: 'bulog' }), 'Perum Bulog');
     if (jenis === 'peta') {
-      h += baris('<svg width="26" height="8"><path d="M0 4h26" stroke="#E3B23C" stroke-width="4" stroke-dasharray="6 4"/></svg>', 'Alur pasok terdokumentasi (beranimasi)')
-        + baris('<svg width="26" height="8"><path d="M0 4h26" stroke="#E3B23C" stroke-opacity=".5" stroke-width="3" stroke-dasharray="3 4"/></svg>', 'Alur pasok, tujuan perlu verifikasi')
-        + baris('<svg width="26" height="8"><path d="M0 4h26" stroke="#7A7F75" stroke-width="2" stroke-dasharray="4 4"/></svg>', 'Garis ke BAZNAS terdekat (saat lumbung dipilih)');
+      h += baris('<svg width="26" height="8"><path d="M0 4h26" stroke="#E3B23C" stroke-width="4" stroke-dasharray="6 4"/></svg>', 'Alur pasok');
     } else {
-      h += baris('<svg width="26" height="10"><path d="M0 5h26" stroke="#1F5E3B" stroke-width="6"/></svg>', 'Alokasi optimal (tebal ∝ ton)')
-        + baris('<svg width="22" height="22" viewBox="-11 -11 22 22"><circle r="9" fill="#6B6F68" fill-opacity=".12" stroke="#6B6F68" stroke-width="1.6" stroke-dasharray="3 3"/></svg>', 'Pasokan Bulog di BAZNAS (luas ∝ ton)')
-        + baris(ik({ jenis: 'calon' }), 'Calon penggilingan baru')
-        + baris(`<span class="lencana-contoh">${U.ikon('seru')}contoh</span>`, 'Angka memakai data contoh');
+      h += baris('<svg width="26" height="10"><path d="M0 5h26" stroke="#1F5E3B" stroke-width="6"/></svg>', 'Alokasi (tebal ∝ ton)')
+        + baris('<svg width="22" height="22" viewBox="-11 -11 22 22"><circle r="9" fill="#6B6F68" fill-opacity=".12" stroke="#6B6F68" stroke-width="1.6" stroke-dasharray="3 3"/></svg>', 'Pasokan Bulog (luas ∝ ton)')
+        + baris(ik({ jenis: 'calon' }), 'Calon penggilingan');
     }
     return h;
   };
@@ -93,7 +96,7 @@
     const f = H.filter;
     if (f.prov && s.provinsi !== f.prov) return false;
     if (s.jenis !== 'lumbung') return true;
-    if (f.kom.size) { const k = s.komoditas || 'kosong'; if (!f.kom.has(k)) return false; }
+    if (f.kom.size && !f.kom.has(s.komoditas)) return false;
     if (f.peng.size) { const g = ZT.D.kelompokPengelola(s); if (!g.some((x) => f.peng.has(x))) return false; }
     return true;
   }
@@ -107,7 +110,7 @@
       if (!cocok(s)) return;
       const m = L.marker([s.lat, s.lon], { icon: P.ikonLeaflet(s, geser[s.id]), title: s.nama, alt: s.nama, riseOnHover: true, keyboard: true,
         zIndexOffset: s.jenis === 'lumbung' ? 400 : s.tingkat_baznas === 'ri' ? 300 : 0 });
-      m.bindTooltip(`${U.esc(s.nama)}<br><span style="font-weight:600;color:#585C54">${P.namaJenis(s)}</span>`, { className: 'zt-tip', direction: 'top', offset: [0, -12] });
+      m.bindTooltip(`${U.esc(s.nama)}<br><span style="font-weight:600;opacity:.75">${P.namaJenis(s)}</span>`, { className: 'zt-tip', direction: 'top', offset: [0, -12] });
       m.on('click', () => P.pilih(s.id));
       m.on('keypress', (e) => { if (e.originalEvent.key === 'Enter') P.pilih(s.id); });
       const lap = s.jenis === 'lumbung' ? 'lumbung' : s.jenis;
@@ -123,28 +126,29 @@
       const dari = ZT.D.byId(a.dari), ke = ZT.D.byId(a.ke);
       if (!dari || !ke || !cocok(dari)) return;
       const pts = G.lengkung([dari.lat, dari.lon], [ke.lat, ke.lon], 0.22);
-      const pasti = a.status === 'terdokumentasi';
-      const garis = L.polyline(pts, { color: W.gabah, weight: pasti ? 4.5 : 3, opacity: pasti ? 0.95 : 0.55, className: 'garis-alur' + (pasti ? '' : ' pelan'), dashArray: pasti ? null : '3 6' });
-      garis.bindTooltip(`<b>${U.esc(dari.nama)} → ${U.esc(ke.nama)}</b><br>${U.esc(a.keterangan)}`, { className: 'zt-tip', sticky: true });
+      const pasti = true;
+      const garis = L.polyline(pts, { color: W.gabah, weight: 4, opacity: 0.95, className: 'garis-alur' });
+      garis.bindTooltip(`<b>${U.esc(dari.nama)} → ${U.esc(ke.nama)}</b><br>Alur pasok beras zakat fitrah`, { className: 'zt-tip', sticky: true });
       garis.on('click', () => P.pilih(dari.id));
       H.lapis.alur.addLayer(garis);
-      H.lapis.alur.addLayer(P.panahUjung(pts, W.gabah, pasti ? 1 : 0.6));
+      H.lapis.alur.addLayer(P.panahUjung(pts, W.gabah, 1));
       H.garisAlur.push({ a, garis });
     });
   }
 
   function ringkasan() {
     const lumbung = ZT.D.jenis('lumbung').filter(cocok);
-    const prov = new Set(lumbung.map((l) => l.provinsi).filter(Boolean));
-    const berdata = lumbung.filter((l) => l.petani != null && !(U.isContoh(l, 'petani') && U.hanyaAsli()));
-    const petani = berdata.reduce((t, l) => t + l.petani, 0);
+    const bz = ZT.D.jenis('baznas').filter((b) => !H.filter.prov || b.provinsi === H.filter.prov);
+    const petani = lumbung.reduce((t, l) => t + (l.petani || 0), 0);
     const R = H.radius != null ? H.radius : ZT.D.param('radius_penggilingan_km');
     const tanpa = ZT.M.tanpaPenggilingan(lumbung, ZT.D.jenis('penggilingan'), R);
-    U.$('#bilah-ringkas').innerHTML = `
-      <div class="ringkas"><span class="ikon">${U.ikon('padi')}</span><div><b>${lumbung.length}</b><span>titik lumbung${H.filter.kom.size || H.filter.peng.size || H.filter.prov ? ' (terfilter)' : ''}</span></div></div>
-      <div class="ringkas"><span class="ikon">${U.ikon('peta')}</span><div><b>${prov.size}</b><span>provinsi</span></div></div>
-      <div class="ringkas"><span class="ikon">${U.ikon('petani')}</span><div><b>${U.angka(petani, 0)}</b><span>petani binaan tercatat<br>(${berdata.length} dari ${lumbung.length} lumbung berdata)</span></div></div>
-      <div class="ringkas"><span class="ikon">${U.ikon('gilingan')}</span><div><b>${tanpa.length}</b><span>lumbung tanpa penggilingan dalam radius <input type="number" id="radius-ringkas" min="10" max="2000" step="10" value="${R}" aria-label="Radius penggilingan dalam km"> km</span></div></div>`;
+    const box = U.$('#bilah-ringkas');
+    box.innerHTML = '<div class="grid-ringkas empat">' + [
+      { ikon: 'gudang', warna: 'w-hijau', label: 'Lumbung pangan', angka: U.angka(lumbung.length, 0), ket: 'lokasi' },
+      { ikon: 'kubah', warna: 'w-emas', label: 'Kantor BAZNAS', angka: U.angka(bz.length, 0), ket: 'kantor penyalur' },
+      { ikon: 'petani', warna: 'w-biru', label: 'Petani binaan', angka: U.angka(petani, 0), ket: 'orang' },
+      { ikon: 'gilingan', warna: 'w-merah', label: 'Jauh dari penggilingan', angka: U.angka(tanpa.length, 0), ket: `lumbung · &gt; <input type="number" id="radius-ringkas" min="10" max="2000" step="10" value="${R}" aria-label="Radius penggilingan dalam km"> km` }
+    ].map(U.kartuRingkas).join('') + '</div>';
     U.$('#radius-ringkas').addEventListener('change', (e) => { H.radius = Math.max(10, +e.target.value || 100); ringkasan(); });
   }
 
@@ -171,7 +175,6 @@
   function tampilPanel(s, terdekat) {
     const panel = U.$('#panel-detail');
     const lok = [s.desa && 'Desa ' + s.desa, s.kecamatan && 'Kec. ' + s.kecamatan, s.kabupaten, s.provinsi].filter(Boolean).join(', ');
-    const presisiTeks = { desa: 'desa', kecamatan: 'kecamatan', kabupaten: 'kabupaten (titik acuan kab/kota)', provinsi: 'provinsi (centroid provinsi)' }[s.presisi_lokasi] || s.presisi_lokasi;
     let angka = '', tabel = '';
     const baris = (lbl, html) => `<tr><th>${lbl}</th><td>${html}</td></tr>`;
     if (s.jenis === 'lumbung') {
@@ -187,25 +190,24 @@
         + baris('Pengelola', s.pengelola ? U.esc(s.pengelola) : '<span class="kosong">belum ada data</span>');
     } else if (s.jenis === 'baznas') {
       angka = `<div class="angka-utama" style="grid-template-columns:1fr 1fr"><div><b>${U.nilaiRingkas(s, 'kebutuhan_ton', 1)}</b><span>kebutuhan beras (ton)</span></div><div><b style="font-size:15px">${P.namaJenis(s).replace('BAZNAS ', '')}</b><span>tingkat</span></div></div>`;
-      tabel = baris('Kebutuhan beras zakat fitrah', U.nilai(s, 'kebutuhan_ton', { satuan: 'ton' })) + baris('Alamat', '<span class="kosong">belum ada data (ambil dari situs resmi *.baznas.go.id)</span>');
+      tabel = baris('Kebutuhan beras zakat fitrah', U.nilai(s, 'kebutuhan_ton', { satuan: 'ton' }));
     } else {
       tabel = baris('Pengelola', s.pengelola ? U.esc(s.pengelola) : '<span class="kosong">belum ada data</span>') + baris('Komoditas', s.komoditas ? U.esc(s.komoditas) : '<span class="kosong">belum ada data</span>');
     }
-    tabel += baris('Presisi lokasi', U.esc(presisiTeks)) + baris('Koordinat', `${s.lat.toFixed(4)}, ${s.lon.toFixed(4)}`);
+
     let blokTerdekat = '';
     if (terdekat) {
       const t = (lbl, d) => d ? `<div><span>${lbl}: ${U.esc(d.simpul.nama)}</span><b>${U.angka(d.km, 0)} km</b></div>` : '';
       const nol = terdekat.kabupaten && terdekat.kabupaten.km < 1;
       blokTerdekat = `<div class="sub-judul">BAZNAS terdekat (garis lurus)</div><div class="terdekat">${t('Kab/kota', terdekat.kabupaten)}${t('Provinsi', terdekat.provinsi)}${t('RI', terdekat.ri)}</div>
-        ${nol ? '<p class="catatan">Jarak 0 km karena lumbung dan kantor BAZNAS kabupaten memakai titik acuan kabupaten yang sama.</p>' : ''}`;
+        ${nol ? '<p class="catatan">Lumbung dan kantor BAZNAS kabupaten berada di kabupaten yang sama.</p>' : ''}`;
     }
     const alur = (ZT.state.data.alur || []).filter((a) => a.dari === s.id || a.ke === s.id);
-    const blokAlur = alur.length ? `<div class="sub-judul">Alur pasok tercatat</div>` + alur.map((a) => `<p style="font-size:13.5px;margin-bottom:6px"><b>${U.esc(ZT.D.byId(a.dari).nama)} → ${U.esc(ZT.D.byId(a.ke).nama)}</b><br><span class="catatan">${U.esc(a.keterangan)}${a.status !== 'terdokumentasi' ? ' (tujuan perlu verifikasi)' : ''}</span></p>`).join('') : '';
+    const blokAlur = alur.length ? `<div class="sub-judul">Alur pasok tercatat</div>` + alur.map((a) => `<p style="font-size:13.5px;margin-bottom:6px"><b>${U.esc(ZT.D.byId(a.dari).nama)} → ${U.esc(ZT.D.byId(a.ke).nama)}</b><br><span class="catatan">Beras zakat fitrah</span></p>`).join('') : '';
     panel.innerHTML = `<div class="sampul" role="img" aria-label="Ilustrasi ${U.esc(s.komoditas || P.namaJenis(s))}">${ZT.I.sampul(s)}<button class="tutup" aria-label="Tutup panel">✕</button></div>
       <div class="isi"><span class="eyebrow" style="margin-bottom:6px">${P.namaJenis(s)}</span><h2>${U.esc(s.nama)}</h2><div class="lokasi">${U.ikon('pin')} ${U.esc(lok) || '<span class="kosong">lokasi belum ada data</span>'}</div>
       ${angka}<table class="tabel-detail">${tabel}</table>${blokTerdekat}${blokAlur}
-      ${s.catatan ? `<div class="sub-judul">Catatan</div><p style="font-size:13.5px">${U.esc(s.catatan)}</p>` : ''}
-      <div class="sub-judul">Sumber</div>${U.sumberHTML(s.sumber)}</div>`;
+</div>`;
     panel.classList.add('buka');
     panel.querySelector('.tutup').addEventListener('click', P.tutupPanel);
   }
@@ -240,7 +242,7 @@
   }
 
   function sorotContoh() {
-    const g = H.garisAlur.find((x) => x.a.dari === 'L01' && x.a.status === 'terdokumentasi');
+    const g = H.garisAlur.find((x) => x.a.dari === 'L01');
     if (!g) return;
     const el = g.garis.getElement(); if (el) { el.classList.add('garis-sorot'); setTimeout(() => el.classList.remove('garis-sorot'), 5200); }
     const c = U.$('#callout-alur'); c.classList.remove('tersembunyi');
@@ -260,15 +262,14 @@
     ['lumbung', 'penggilingan', 'baznas', 'bulog', 'alur'].forEach((k) => { H.lapis[k] = L.layerGroup().addTo(map); });
     H.lapis.alur.addTo(map);
     U.$('#isi-legenda').innerHTML = P.legendaHTML('peta');
-    if (window.innerWidth < 720) U.$('#legenda-peta').removeAttribute('open');
     pasangFilter();
     H.siap = true;
     segarkan(false);
-    map.fitBounds([[-11, 95], [6, 141]]);
+    map.fitBounds(P.BATAS_INDONESIA);
     setTimeout(sorotContoh, 700);
   };
 
-  P.tampil = () => { if (H.map) setTimeout(() => { H.map.invalidateSize(); if (!H.dipas) { H.map.fitBounds([[-11, 95], [6, 141]]); H.dipas = true; } }, 80); };
+  P.tampil = () => { if (H.map) setTimeout(() => { H.map.invalidateSize(); if (!H.dipas) { H.map.fitBounds(P.BATAS_INDONESIA); H.dipas = true; } }, 80); };
   P.rerender = () => { if (H.siap) { const sel = U.$('#f-prov'); const v = sel.value; sel.innerHTML = '<option value="">Semua provinsi</option>' + ZT.D.provinsi().map((p) => `<option ${p === v ? 'selected' : ''}>${U.esc(p)}</option>`).join(''); segarkan(false); } };
   /** Dipakai halaman lain: buka peta lalu pilih simpul. */
   P.fokus = (id) => {

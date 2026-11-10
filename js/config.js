@@ -49,7 +49,22 @@ ZT.CONFIG = {
   jenisValid: ['lumbung', 'penggilingan', 'baznas', 'bulog'],
   presisiValid: ['desa', 'kecamatan', 'kabupaten', 'provinsi'],
   maksSkenario: 3,
+  // Alamat surel CRP untuk bagian kontak (Tentang & FAQ). Kosong → tampil "[alamat surel CRP]".
+  kontakSurel: '',
   pusatIndonesia: [-2.5, 118], zoomAwal: 5
 };
+
+// Pulau tiap provinsi (untuk biaya penyeberangan antarpulau).
+ZT.PULAU = {
+  'DKI Jakarta': 'Jawa', 'Jawa Barat': 'Jawa', 'Banten': 'Jawa', 'Jawa Tengah': 'Jawa', 'DI Yogyakarta': 'Jawa', 'Jawa Timur': 'Jawa',
+  'Sumatera Utara': 'Sumatra', 'Lampung': 'Sumatra', 'Riau': 'Sumatra', 'Nusa Tenggara Barat': 'Lombok',
+  'Sulawesi Barat': 'Sulawesi', 'Sulawesi Selatan': 'Sulawesi', 'Kalimantan Selatan': 'Kalimantan', 'Papua': 'Papua'
+};
+// Pilihan jadwal Ramadan (perkiraan; 1448 H sesuai Kalender Hijriah Indonesia Kemenag, sisanya menunggu sidang isbat).
+ZT.RAMADAN = [
+  { kode: '1448', bulan: 2, label: 'Ramadan 1448 H · awal Feb 2027' },
+  { kode: '1449', bulan: 1, label: 'Ramadan 1449 H · akhir Jan 2028' },
+  { kode: '1450', bulan: 1, label: 'Ramadan 1450 H · pertengahan Jan 2029' }
+];
 
 ZT.BULAN = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];

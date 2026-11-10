@@ -9,7 +9,7 @@
 (function (ZT) {
   'use strict';
   const D = {};
-  const KUNCI_LOKAL = 'zakatani:dataset:v1';
+  const KUNCI_LOKAL = 'zakatani:dataset:v2';
   const C = ZT.CONFIG;
 
   ZT.state = ZT.state || { hanyaAsli: false, data: null, awal: null, sumberData: 'berkas', bisaSimpan: false, pengguna: null };

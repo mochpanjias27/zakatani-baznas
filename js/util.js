@@ -22,34 +22,30 @@
   U.ikon = (id, cls = '') => `<svg class="${cls}" width="1.1em" height="1.1em" aria-hidden="true" style="vertical-align:-0.15em"><use href="#i-${id}"/></svg>`;
   U.debounce = (fn, ms = 250) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
 
-  /* ---------- status data asli / contoh ---------- */
-  U.hanyaAsli = () => !!ZT.state.hanyaAsli;
+  /* ---------- nilai simpul ----------
+   * Status asli/contoh tetap disimpan di data (untuk tim di Kelola Data), tetapi tidak
+   * ditampilkan: seluruh angka di situs saat ini adalah data ilustrasi (lihat pita atas). */
+  U.hanyaAsli = () => false;
   U.statusField = (s, f) => (s.status && s.status[f]) || (s[f] == null ? null : 'asli');
   U.isContoh = (s, f) => U.statusField(s, f) === 'contoh';
-  U.lencanaContoh = () => `<span class="lencana-contoh" title="Data contoh (sementara), bukan data resmi">${U.ikon('seru')}contoh</span>`;
-  U.lencanaVerif = (s, f) => (s.perlu_verifikasi || []).includes(f) ? '<span class="lencana-verif" title="Angka perlu diverifikasi / URL angka belum lengkap">perlu verifikasi</span>' : '';
-
-  /**
-   * Format satu angka simpul sesuai status & mode "Hanya data asli".
-   * Kembali: HTML. Kosong → "belum ada data". Contoh disembunyikan → keterangan.
-   */
+  U.lencanaContoh = () => '';
+  U.lencanaVerif = () => '';
   U.nilai = (s, f, opsi = {}) => {
     const v = s[f];
-    if (v == null || (Array.isArray(v) && !v.length)) return '<span class="kosong">belum ada data</span>';
-    const contoh = U.isContoh(s, f);
-    if (contoh && U.hanyaAsli()) return '<span class="disembunyikan">disembunyikan (contoh)</span>';
-    let teks;
-    if (f === 'musim_panen') teks = v.map((b) => ZT.BULAN[b - 1].slice(0, 3)).join(', ');
-    else if (f === 'tahun_mulai') teks = String(v);
-    else teks = U.angka(v, opsi.d != null ? opsi.d : 1) + (opsi.satuan ? ' ' + opsi.satuan : '');
-    return `${U.esc(teks)}${contoh ? ' ' + U.lencanaContoh() : ''}${U.lencanaVerif(s, f)}`;
+    if (v == null || (Array.isArray(v) && !v.length)) return '<span class="kosong">–</span>';
+    if (f === 'musim_panen') return U.esc(v.map((b) => ZT.BULAN[b - 1].slice(0, 3)).join(', '));
+    if (f === 'tahun_mulai') return U.esc(String(v));
+    return U.esc(U.angka(v, opsi.d != null ? opsi.d : 1) + (opsi.satuan ? ' ' + opsi.satuan : ''));
   };
-  /** Versi ringkas untuk kartu angka besar (tanpa lencana verifikasi). */
-  U.nilaiRingkas = (s, f, d = 0) => {
-    const v = s[f];
-    if (v == null) return '<span class="kosong" style="font-size:12px">belum ada</span>';
-    if (U.isContoh(s, f) && U.hanyaAsli()) return '<span class="disembunyikan" style="font-size:12px">disembunyikan</span>';
-    return U.esc(U.angka(v, d)) + (U.isContoh(s, f) ? ' <sup title="data contoh" style="color:#8a6400">!</sup>' : '');
+  U.nilaiRingkas = (s, f, d = 0) => (s[f] == null ? '–' : U.esc(U.angka(s[f], d)));
+
+  /** Kartu ringkas berikon dengan garis warna (Beranda, Peta, Simulasi). */
+  U.kartuRingkas = (k) => {
+    const angka = k.nilai != null
+      ? `${k.awalan || ''}<span data-hitung="${k.nilai}" data-desimal="${k.desimal || 0}">${U.angka(k.nilai, k.desimal || 0)}</span>${k.akhiran ? ' <small style="font-size:.62em">' + k.akhiran + '</small>' : ''}`
+      : (k.angka || '–');
+    return `<div class="kartu-ringkas ${k.warna || 'w-hijau'}${k.sorot ? ' sorot' : ''}"${k.id ? ` id="${k.id}"` : ''}><span class="ikon">${U.ikon(k.ikon)}</span>
+    <span class="label">${k.label}</span><span class="angka">${angka}</span><span class="ket">${k.ket || ''}</span></div>`;
   };
 
   U.toast = (pesan, ms = 3200) => {

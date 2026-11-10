@@ -48,20 +48,20 @@
 
   /* ---------------- CSV ---------------- */
   E.barisHasil = (h) => {
-    const r = h.alokasi.map((a) => ({ dari: a.dari.nama, dari_id: a.dari.id, ke: a.ke.nama, ke_id: a.ke.id, lewat_penggilingan: a.via ? a.via.nama : '', ton: a.ton.toFixed(2), jarak_km: a.km.toFixed(1), ongkos_rp: Math.round(a.ongkos), jenis: 'lumbung' }));
-    h.bulog.forEach((b) => r.push({ dari: 'Perum Bulog (cadangan)', dari_id: 'BULOG', ke: b.ke.nama, ke_id: b.ke.id, lewat_penggilingan: '', ton: b.ton.toFixed(2), jarak_km: '', ongkos_rp: Math.round(b.ongkos), jenis: 'bulog' }));
-    h.kurang.forEach((k) => r.push({ dari: '— tak terpenuhi —', dari_id: '', ke: k.ke.nama, ke_id: k.ke.id, lewat_penggilingan: '', ton: k.ton.toFixed(2), jarak_km: '', ongkos_rp: '', jenis: 'kurang' }));
+    const r = h.alokasi.map((a) => ({ dari: a.dari.nama, dari_id: a.dari.id, ke: a.ke.nama, ke_id: a.ke.id, lewat_penggilingan: a.via ? a.via.nama : '', ton: a.ton.toFixed(2), jarak_km: a.km.toFixed(1), ongkos_kirim_rp: Math.round(a.ongkosKirim), ongkos_rp: Math.round(a.ongkos), jenis: 'lumbung' }));
+    h.bulog.forEach((b) => r.push({ dari: b.gudang ? b.gudang.nama : 'Perum Bulog', dari_id: b.gudang ? b.gudang.id : 'BULOG', ke: b.ke.nama, ke_id: b.ke.id, lewat_penggilingan: '', ton: b.ton.toFixed(2), jarak_km: b.km.toFixed(1), ongkos_kirim_rp: Math.round(b.ongkosKirim), ongkos_rp: Math.round(b.ongkos), jenis: 'bulog' }));
+    h.kurang.forEach((k) => r.push({ dari: '— tak terpenuhi —', dari_id: '', ke: k.ke.nama, ke_id: k.ke.id, lewat_penggilingan: '', ton: k.ton.toFixed(2), jarak_km: '', ongkos_kirim_rp: '', ongkos_rp: '', jenis: 'kurang' }));
     return r;
   };
   E.csvHasil = (h) => {
-    const kol = ['jenis', 'dari', 'dari_id', 'ke', 'ke_id', 'lewat_penggilingan', 'ton', 'jarak_km', 'ongkos_rp'];
-    const kepala = `# ZakaTani — hasil alokasi (${stempel()}). PERHATIAN: memakai data contoh (kapasitas, kebutuhan, tarif); bukan data resmi.\n`;
+    const kol = ['jenis', 'dari', 'dari_id', 'ke', 'ke_id', 'lewat_penggilingan', 'ton', 'jarak_km', 'ongkos_kirim_rp', 'ongkos_rp'];
+    const kepala = `# ZakaTani — hasil alokasi (${stempel()}). Data ilustrasi (kapasitas, kebutuhan, ongkos); bukan data resmi BAZNAS.\n`;
     return kepala + ZT.D.keCSV(E.barisHasil(h), kol).replace(/^﻿/, '');
   };
   E.csvSkenario = (daftar) => {
-    const kol = ['skenario', 'keterangan', 'total_ongkos_rp', 'ongkos_angkut_rp', 'ongkos_bulog_rp', 'ton_lumbung', 'ton_bulog', 'ton_tak_terpenuhi', 'porsi_bulog_persen', 'pembanding_via_baznas_ri_rp'];
-    const r = daftar.map((s) => ({ skenario: s.nama, keterangan: s.ket, total_ongkos_rp: Math.round(s.h.total), ongkos_angkut_rp: Math.round(s.h.totalAngkut), ongkos_bulog_rp: Math.round(s.h.totalBulog), ton_lumbung: s.h.tonLumbung.toFixed(2), ton_bulog: s.h.tonBulog.toFixed(2), ton_tak_terpenuhi: s.h.tonKurang.toFixed(2), porsi_bulog_persen: (100 * s.h.tonBulog / Math.max(1e-9, s.h.totalKebutuhan)).toFixed(1), pembanding_via_baznas_ri_rp: s.h.pembanding ? Math.round(s.h.pembanding.total) : '' }));
-    return `# ZakaTani — perbandingan skenario (${stempel()}). Memakai data contoh.\n` + ZT.D.keCSV(r, kol).replace(/^﻿/, '');
+    const kol = ['skenario', 'keterangan', 'total_ongkos_rp', 'ongkos_lumbung_rp', 'ongkos_bulog_rp', 'ton_lumbung', 'ton_bulog', 'ton_tak_terpenuhi', 'porsi_bulog_persen', 'skema_terpusat_rp'];
+    const r = daftar.map((s) => ({ skenario: s.nama, keterangan: s.ket, total_ongkos_rp: Math.round(s.h.total), ongkos_lumbung_rp: Math.round(s.h.totalAngkut), ongkos_bulog_rp: Math.round(s.h.totalBulog), ton_lumbung: s.h.tonLumbung.toFixed(2), ton_bulog: s.h.tonBulog.toFixed(2), ton_tak_terpenuhi: s.h.tonKurang.toFixed(2), porsi_bulog_persen: (100 * s.h.tonBulog / Math.max(1e-9, s.h.totalKebutuhan)).toFixed(1), skema_terpusat_rp: s.h.pembanding ? Math.round(s.h.pembanding.total) : '' }));
+    return `# ZakaTani — perbandingan skenario (${stempel()}). Data ilustrasi; bukan data resmi BAZNAS.\n` + ZT.D.keCSV(r, kol).replace(/^﻿/, '');
   };
 
   /* ---------------- PDF ---------------- */
@@ -79,19 +79,19 @@
     const hijau = [31, 94, 59];
     doc.setFillColor(...hijau); doc.rect(0, 0, 595, 70, 'F');
     doc.setTextColor(255); doc.setFont('helvetica', 'bold'); doc.setFontSize(18); doc.text('ZakaTani — Hasil Alokasi Beras Zakat Fitrah', 36, 34);
-    doc.setFontSize(9.5); doc.setFont('helvetica', 'normal'); doc.text('Prototipe riset — Beasiswa Riset BAZNAS 2026. Bukan situs resmi BAZNAS. Dicetak ' + stempel(), 36, 52);
+    doc.setFontSize(9.5); doc.setFont('helvetica', 'normal'); doc.text('Prototipe riset CRP — usulan Beasiswa Riset BAZNAS 2026. Bukan situs resmi BAZNAS. Dicetak ' + stempel(), 36, 52);
     doc.setTextColor(43); doc.setFontSize(10);
     let y = 92;
     doc.setFillColor(246, 231, 191); doc.rect(36, y - 12, 523, 30, 'F');
-    doc.text('PERHATIAN: kapasitas, kebutuhan, dan tarif memakai DATA CONTOH (sementara), bukan data resmi BAZNAS.', 44, y + 6);
+    doc.text('Angka kapasitas, kebutuhan, ongkos, dan hasil simulasi adalah DATA ILUSTRASI, bukan data resmi BAZNAS.', 44, y + 6);
     y += 36;
     const pBulog = h.tonBulog / Math.max(1e-9, h.totalKebutuhan);
     const ringkas = [
-      ['Total ongkos', U.rupiah(h.total)], ['Ongkos angkut lumbung', U.rupiah(h.totalAngkut)], ['Ongkos Bulog', U.rupiah(h.totalBulog)],
+      ['Total ongkos', U.rupiah(h.total)], ['Ongkos kirim (lumbung + Bulog)', U.rupiah(h.kirimTotal)], ['Harga beli beras lumbung', U.rupiah(h.ongkosHarga)], ['Pasokan Bulog (kirim + harga)', U.rupiah(h.totalBulog)],
       ['Total kebutuhan', U.angka(h.totalKebutuhan, 1) + ' ton'], ['Dipenuhi lumbung', U.angka(h.tonLumbung, 1) + ' ton (' + U.persen(1 - pBulog - h.tonKurang / Math.max(1e-9, h.totalKebutuhan), 1) + ')'],
       ['Dipenuhi Bulog', U.angka(h.tonBulog, 1) + ' ton (' + U.persen(pBulog, 1) + ')'], ['Tak terpenuhi', U.angka(h.tonKurang, 1) + ' ton']
     ];
-    if (h.pembanding) ringkas.push(['Pola saat ini (semua lewat BAZNAS RI)', U.rupiah(h.pembanding.total)], ['Selisih (hemat)', U.rupiah(h.pembanding.total - h.total)]);
+    if (h.pembanding) ringkas.push(['Skema terpusat (semua lewat BAZNAS RI)', U.rupiah(h.pembanding.total)], ['Selisih', U.rupiah(h.pembanding.total - h.total)]);
     if (skenario) ringkas.unshift(['Skenario', skenario]);
     doc.autoTable({ startY: y, head: [['Ringkasan', '']], body: ringkas, theme: 'grid', headStyles: { fillColor: hijau }, styles: { fontSize: 9.5 }, columnStyles: { 0: { cellWidth: 220, fontStyle: 'bold' } }, margin: { left: 36, right: 36 } });
     y = doc.lastAutoTable.finalY + 18;
@@ -99,7 +99,7 @@
     doc.autoTable({ startY: y, head: [['Dari', 'Ke', 'Lewat penggilingan', 'Ton', 'Km', 'Ongkos']], body, theme: 'striped', headStyles: { fillColor: hijau }, styles: { fontSize: 8.2 }, margin: { left: 36, right: 36 } });
     y = doc.lastAutoTable.finalY + 16;
     doc.setFontSize(8); doc.setTextColor(90);
-    doc.text(doc.splitTextToSize('Metode: model transportasi (pemrograman linear), jarak garis lurus haversine × faktor jalan × tarif per ton-km. Perum Bulog sebagai pemasok cadangan berongkos lebih tinggi. Koordinat berpresisi kabupaten/provinsi. Lihat halaman Tentang & Metodologi.', 520), 36, Math.min(y, 800));
+    doc.text(doc.splitTextToSize('Metode: model alokasi dua tahap (pemrograman linear). Tahap 1 memaksimumkan beras petani binaan terserap; tahap 2 meminimumkan ongkos (kirim + harga beli). Ongkos kirim = maks(jarak haversine × faktor jalan × tarif, ongkos lokal minimum) + biaya penyeberangan. Bulog mengisi kekurangan dari gudang provinsi. Lihat halaman Metodologi.', 520), 36, Math.min(y, 800));
     return doc.output('blob');
   };
 
@@ -108,9 +108,9 @@
     const doc = new JsPDF({ unit: 'pt', format: 'a4', orientation: 'landscape' });
     doc.setFillColor(31, 94, 59); doc.rect(0, 0, 842, 64, 'F');
     doc.setTextColor(255); doc.setFont('helvetica', 'bold'); doc.setFontSize(17); doc.text('ZakaTani — Perbandingan Skenario', 36, 32);
-    doc.setFontSize(9.5); doc.setFont('helvetica', 'normal'); doc.text('Memakai data contoh (sementara), bukan data resmi BAZNAS. Dicetak ' + stempel(), 36, 50);
+    doc.setFontSize(9.5); doc.setFont('helvetica', 'normal'); doc.text('Data ilustrasi, bukan data resmi BAZNAS. Dicetak ' + stempel(), 36, 50);
     const body = daftar.map((s) => [s.nama, s.ket, U.rupiah(s.h.total), U.angka(s.h.tonBulog, 1) + ' t (' + U.persen(s.h.tonBulog / Math.max(1e-9, s.h.totalKebutuhan), 1) + ')', U.angka(s.h.tonKurang, 1) + ' t', s.h.pembanding ? U.rupiah(s.h.pembanding.total) : '–']);
-    doc.autoTable({ startY: 84, head: [['Skenario', 'Keterangan', 'Total ongkos', 'Porsi Bulog', 'Tak terpenuhi', 'Pola saat ini (via BAZNAS RI)']], body, theme: 'grid', headStyles: { fillColor: [31, 94, 59] }, styles: { fontSize: 9 }, columnStyles: { 1: { cellWidth: 260 } }, margin: { left: 36, right: 36 } });
+    doc.autoTable({ startY: 84, head: [['Skenario', 'Keterangan', 'Total ongkos', 'Porsi Bulog', 'Tak terpenuhi', 'Skema terpusat (via BAZNAS RI)']], body, theme: 'grid', headStyles: { fillColor: [31, 94, 59] }, styles: { fontSize: 9 }, columnStyles: { 1: { cellWidth: 260 } }, margin: { left: 36, right: 36 } });
     return doc.output('blob');
   };
 

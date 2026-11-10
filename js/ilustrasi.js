@@ -21,7 +21,7 @@
     const warnaT = ['#2E6B3E', '#357746', '#3C8250', '#448C57', '#4E975F', '#5AA066'];
     for (let i = 0; i < 6; i++) {
       const y = 470 + i * 58;
-      terasering += `<path d="M560 ${y} C 820 ${y - 70 + i * 6} 1140 ${y - 40} 1600 ${y - 90 + i * 8} L1600 900 L560 900 Z" fill="${warnaT[i]}"/>`;
+      terasering += `<path d="M0 ${y + 14} L560 ${y} C 820 ${y - 70 + i * 6} 1140 ${y - 40} 1600 ${y - 90 + i * 8} L1600 900 L0 900 Z" fill="${warnaT[i]}"/>`;
       terasering += `<path d="M560 ${y} C 820 ${y - 70 + i * 6} 1140 ${y - 40} 1600 ${y - 90 + i * 8}" stroke="#9DCB7E" stroke-opacity=".55" stroke-width="3" fill="none"/>`;
       // garis tanam
       for (let k = 0; k < 14; k++) {
@@ -39,7 +39,7 @@
       <rect width="1600" height="900" fill="url(#langit)"/>
       <circle cx="1130" cy="330" r="190" fill="url(#matahari)" opacity=".9"/>
       <circle cx="1130" cy="330" r="78" fill="#F5D57A"/>
-      <path d="M520 470 C 700 330 860 300 1020 380 C 1150 300 1300 260 1600 340 L1600 600 L520 600Z" fill="#24573A"/>
+      <path d="M0 500 C 220 488 420 478 520 470 C 700 330 860 300 1020 380 C 1150 300 1300 260 1600 340 L1600 640 L0 640Z" fill="#24573A"/>
       <path d="M700 520 C 860 420 1000 410 1160 460 C 1300 400 1450 400 1600 430 L1600 640 L700 640Z" fill="#2A6141"/>
       <!-- lumbung (rumah panggung) -->
       <g transform="translate(860 380)">
@@ -110,11 +110,11 @@
 
   /** HTML ikon penanda Leaflet. `presisiKasar` → garis tepi putus-putus. */
   I.penanda = (s, opsi = {}) => {
-    const kasar = s.presisi_lokasi && s.presisi_lokasi !== 'desa';
+    const kasar = false; // keterangan presisi lokasi tidak ditampilkan (No. 11)
     const dash = kasar ? 'stroke-dasharray="3 2.2"' : '';
     let svg, ukuran;
     if (s.jenis === 'lumbung') {
-      ukuran = 30; const g = glyph[s.komoditas] || glyph.kosong;
+      ukuran = 30; const g = glyph[s.komoditas] || glyph.padi;
       svg = `<svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="12.5" fill="${W.hijauPadi}" stroke="#fff" stroke-width="2.2" ${dash}/>${g}</svg>`;
     } else if (s.jenis === 'penggilingan' || s.jenis === 'calon') {
       ukuran = 26; const warna = s.jenis === 'calon' ? W.gabah : W.tanah;

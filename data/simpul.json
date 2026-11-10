@@ -2,7 +2,7 @@
  "meta": {
   "versi": "0.1.0",
   "diperbarui": "2026-11-08",
-  "catatan": "Data awal prototipe ZakaTani. Angka berstatus \"contoh\" bersifat sementara."
+  "catatan": "Data ilustrasi prototipe ZakaTani; diganti data asli setelah proposal diterima."
  },
  "parameter": {
   "tarif_per_tonkm": {
@@ -16,12 +16,6 @@
    "satuan": "×",
    "status": "contoh",
    "label": "Faktor jalan"
-  },
-  "ongkos_bulog_per_ton": {
-   "nilai": 1000000,
-   "satuan": "Rp/ton",
-   "status": "contoh",
-   "label": "Ongkos tambahan Bulog"
   },
   "radius_penggilingan_km": {
    "nilai": 100,
@@ -40,6 +34,30 @@
    "satuan": "ton",
    "status": "contoh",
    "label": "Batas pasokan Bulog (kosong = tak terbatas)"
+  },
+  "ongkos_lokal_min_per_ton": {
+   "nilai": 75000,
+   "satuan": "Rp/ton",
+   "status": "contoh",
+   "label": "Ongkos lokal minimum"
+  },
+  "biaya_penyeberangan_per_ton": {
+   "nilai": 300000,
+   "satuan": "Rp/ton per penyeberangan",
+   "status": "contoh",
+   "label": "Biaya penyeberangan antarpulau"
+  },
+  "harga_beras_lumbung_per_ton": {
+   "nilai": 12500000,
+   "satuan": "Rp/ton",
+   "status": "contoh",
+   "label": "Harga beli beras lumbung"
+  },
+  "harga_beras_bulog_per_ton": {
+   "nilai": 12000000,
+   "satuan": "Rp/ton",
+   "status": "contoh",
+   "label": "Harga beli beras Bulog"
   }
  },
  "simpul": [
@@ -50,9 +68,9 @@
    "provinsi": "Jawa Barat",
    "komoditas": "padi",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 50,
+   "luas_ha": 22.5,
+   "panen_ton": 216,
    "tahun_mulai": null,
    "kapasitas_ton": 133.7,
    "musim_panen": [
@@ -66,7 +84,10 @@
    "status": {
     "kapasitas_ton": "asli",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -102,9 +123,9 @@
    "provinsi": "Banten",
    "komoditas": "padi",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 40,
+   "luas_ha": 18.0,
+   "panen_ton": 145,
    "tahun_mulai": 2019,
    "kapasitas_ton": 90,
    "musim_panen": [
@@ -119,7 +140,10 @@
     "tahun_mulai": "asli",
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -153,7 +177,7 @@
    "pengelola": "BAZNAS RI",
    "petani": 23,
    "luas_ha": 23.5,
-   "panen_ton": null,
+   "panen_ton": 81,
    "tahun_mulai": null,
    "kapasitas_ton": 50,
    "musim_panen": [
@@ -169,7 +193,8 @@
     "luas_ha": "asli",
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -204,9 +229,9 @@
    "provinsi": "Banten",
    "komoditas": "padi",
    "pengelola": "BAZNAS RI + BAZNAS Kab. Tangerang",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 25,
+   "luas_ha": 11.2,
+   "panen_ton": 65,
    "tahun_mulai": 2025,
    "kapasitas_ton": 40,
    "musim_panen": [
@@ -221,7 +246,10 @@
     "tahun_mulai": "asli",
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -348,7 +376,7 @@
    "pengelola": "BAZNAS RI",
    "petani": 120,
    "luas_ha": 25,
-   "panen_ton": null,
+   "panen_ton": 73,
    "tahun_mulai": null,
    "kapasitas_ton": 45,
    "musim_panen": [
@@ -363,7 +391,8 @@
     "luas_ha": "asli",
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -390,9 +419,9 @@
    "provinsi": "Jawa Tengah",
    "komoditas": "padi",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 35,
+   "luas_ha": 15.8,
+   "panen_ton": 113,
    "tahun_mulai": null,
    "kapasitas_ton": 70,
    "musim_panen": [
@@ -406,7 +435,10 @@
    "status": {
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -434,9 +466,9 @@
    "provinsi": "Lampung",
    "komoditas": "padi",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 35,
+   "luas_ha": 15.8,
+   "panen_ton": 113,
    "tahun_mulai": null,
    "kapasitas_ton": 70,
    "musim_panen": [
@@ -451,7 +483,10 @@
    "status": {
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -479,9 +514,9 @@
    "provinsi": "Sulawesi Barat",
    "komoditas": "padi",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 30,
+   "luas_ha": 13.5,
+   "panen_ton": 97,
    "tahun_mulai": null,
    "kapasitas_ton": 60,
    "musim_panen": [
@@ -495,7 +530,10 @@
    "status": {
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -521,18 +559,22 @@
    "kecamatan": null,
    "kabupaten": "Kab. Garut",
    "provinsi": "Jawa Barat",
-   "komoditas": null,
+   "komoditas": "hortikultura",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 28,
+   "luas_ha": 12.6,
+   "panen_ton": 70,
    "tahun_mulai": null,
    "kapasitas_ton": null,
    "musim_panen": null,
    "stok_simpan_ton": null,
    "kebutuhan_ton": null,
    "tingkat_baznas": null,
-   "status": {},
+   "status": {
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
+   },
    "sumber": [
     {
      "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
@@ -540,7 +582,7 @@
     }
    ],
    "perlu_verifikasi": [],
-   "catatan": "Komoditas belum ada data.",
+   "catatan": "Komoditas: data ilustrasi.",
    "jenis": "lumbung",
    "lat": -7.38333,
    "lon": 107.76667,
@@ -553,18 +595,22 @@
    "kecamatan": null,
    "kabupaten": "Kab. Sleman",
    "provinsi": "DI Yogyakarta",
-   "komoditas": null,
+   "komoditas": "hortikultura",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 22,
+   "luas_ha": 9.9,
+   "panen_ton": 40,
    "tahun_mulai": null,
    "kapasitas_ton": null,
    "musim_panen": null,
    "stok_simpan_ton": null,
    "kebutuhan_ton": null,
    "tingkat_baznas": null,
-   "status": {},
+   "status": {
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
+   },
    "sumber": [
     {
      "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
@@ -572,7 +618,7 @@
     }
    ],
    "perlu_verifikasi": [],
-   "catatan": "Komoditas belum ada data.",
+   "catatan": "Komoditas: data ilustrasi.",
    "jenis": "lumbung",
    "lat": -7.68167,
    "lon": 110.32333,
@@ -587,16 +633,20 @@
    "provinsi": "Jawa Barat",
    "komoditas": "hortikultura",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 40,
+   "luas_ha": 18.0,
+   "panen_ton": 85,
    "tahun_mulai": null,
    "kapasitas_ton": null,
    "musim_panen": null,
    "stok_simpan_ton": null,
    "kebutuhan_ton": null,
    "tingkat_baznas": null,
-   "status": {},
+   "status": {
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
+   },
    "sumber": [
     {
      "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
@@ -617,18 +667,22 @@
    "kecamatan": null,
    "kabupaten": "Kab. Pandeglang",
    "provinsi": "Banten",
-   "komoditas": null,
+   "komoditas": "jagung",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 25,
+   "luas_ha": 11.2,
+   "panen_ton": 90,
    "tahun_mulai": null,
    "kapasitas_ton": null,
    "musim_panen": null,
    "stok_simpan_ton": null,
    "kebutuhan_ton": null,
    "tingkat_baznas": null,
-   "status": {},
+   "status": {
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
+   },
    "sumber": [
     {
      "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
@@ -636,7 +690,7 @@
     }
    ],
    "perlu_verifikasi": [],
-   "catatan": "Komoditas belum ada data.",
+   "catatan": "Komoditas: data ilustrasi.",
    "jenis": "lumbung",
    "lat": -6.63333,
    "lon": 105.75,
@@ -649,18 +703,22 @@
    "kecamatan": null,
    "kabupaten": null,
    "provinsi": "Papua",
-   "komoditas": null,
+   "komoditas": "jagung",
    "pengelola": "BAZNAS RI",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 20,
+   "luas_ha": 9.0,
+   "panen_ton": 60,
    "tahun_mulai": null,
    "kapasitas_ton": null,
    "musim_panen": null,
    "stok_simpan_ton": null,
    "kebutuhan_ton": null,
    "tingkat_baznas": null,
-   "status": {},
+   "status": {
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
+   },
    "sumber": [
     {
      "label": "Centroid poligon provinsi: dataset 38 provinsi denyherianto (perlu verifikasi BPS/Geoportal)",
@@ -683,16 +741,20 @@
    "provinsi": "Jawa Tengah",
    "komoditas": "hortikultura",
    "pengelola": "BAZNAS Kab. Sragen",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 18,
+   "luas_ha": 8.1,
+   "panen_ton": 45,
    "tahun_mulai": null,
    "kapasitas_ton": null,
    "musim_panen": null,
    "stok_simpan_ton": null,
    "kebutuhan_ton": null,
    "tingkat_baznas": null,
-   "status": {},
+   "status": {
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
+   },
    "sumber": [
     {
      "label": "Khasanah & Triatmo (2025), JRMDK: Lumbung Pangan Greenhouse Melon BAZNAS Sragen",
@@ -719,7 +781,7 @@
    "provinsi": "Kalimantan Selatan",
    "komoditas": "padi",
    "pengelola": "BAZNAS Prov. Kalsel",
-   "petani": null,
+   "petani": 45,
    "luas_ha": 100,
    "panen_ton": 279.4,
    "tahun_mulai": 2022,
@@ -737,7 +799,8 @@
     "tahun_mulai": "asli",
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh"
    },
    "sumber": [
     {
@@ -765,9 +828,9 @@
    "provinsi": "Riau",
    "komoditas": "padi",
    "pengelola": "BAZNAS Kab. Siak + BAZNAS Prov. Riau",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 30,
+   "luas_ha": 13.5,
+   "panen_ton": 81,
    "tahun_mulai": null,
    "kapasitas_ton": 50,
    "musim_panen": [
@@ -780,7 +843,10 @@
    "status": {
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -808,9 +874,9 @@
    "provinsi": "Sulawesi Selatan",
    "komoditas": "padi",
    "pengelola": "BAZNAS Kab. Bulukumba",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 22,
+   "luas_ha": 9.9,
+   "panen_ton": 65,
    "tahun_mulai": 2024,
    "kapasitas_ton": 40,
    "musim_panen": [
@@ -825,7 +891,10 @@
     "tahun_mulai": "asli",
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -849,18 +918,22 @@
    "kecamatan": null,
    "kabupaten": "Kab. Sumedang",
    "provinsi": "Jawa Barat",
-   "komoditas": null,
+   "komoditas": "hortikultura",
    "pengelola": "BAZNAS Kab. Sumedang",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 20,
+   "luas_ha": 9.0,
+   "panen_ton": 50,
    "tahun_mulai": null,
    "kapasitas_ton": null,
    "musim_panen": null,
    "stok_simpan_ton": null,
    "kebutuhan_ton": null,
    "tingkat_baznas": null,
-   "status": {},
+   "status": {
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
+   },
    "sumber": [
     {
      "label": "Titik acuan kab/kota: dataset eppofahmi/geojson-indonesia (perlu verifikasi BPS/Geoportal)",
@@ -868,7 +941,7 @@
     }
    ],
    "perlu_verifikasi": [],
-   "catatan": "Komoditas belum ada data.",
+   "catatan": "Komoditas: data ilustrasi.",
    "jenis": "lumbung",
    "lat": -6.81667,
    "lon": 107.98333,
@@ -883,9 +956,9 @@
    "provinsi": "Jawa Barat",
    "komoditas": "padi",
    "pengelola": "BAZNAS Kab. Cianjur",
-   "petani": null,
-   "luas_ha": null,
-   "panen_ton": null,
+   "petani": 23,
+   "luas_ha": 10.3,
+   "panen_ton": 81,
    "tahun_mulai": null,
    "kapasitas_ton": 50,
    "musim_panen": [
@@ -899,7 +972,10 @@
    "status": {
     "kapasitas_ton": "contoh",
     "musim_panen": "contoh",
-    "stok_simpan_ton": "contoh"
+    "stok_simpan_ton": "contoh",
+    "petani": "contoh",
+    "luas_ha": "contoh",
+    "panen_ton": "contoh"
    },
    "sumber": [
     {
@@ -2108,12 +2184,336 @@
     }
    ],
    "perlu_verifikasi": [],
-   "catatan": "Pemasok cadangan dalam model. Diasumsikan memasok dari gudang setempat dengan ongkos rata per ton (parameter).",
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
    "jenis": "bulog",
-   "id": "BL01",
-   "nama": "Perum Bulog (kantor pusat)",
+   "id": "BLG-DKI",
+   "nama": "Gudang Bulog Kanwil DKI Jakarta",
    "lat": -6.266,
    "lon": 106.8135,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Bandung",
+   "provinsi": "Jawa Barat",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-01",
+   "nama": "Gudang Bulog Kanwil Jawa Barat",
+   "lat": -6.9175,
+   "lon": 107.62444,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Serang",
+   "provinsi": "Banten",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-02",
+   "nama": "Gudang Bulog Kanwil Banten",
+   "lat": -6.12563,
+   "lon": 106.14999,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Medan",
+   "provinsi": "Sumatera Utara",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-03",
+   "nama": "Gudang Bulog Kanwil Sumatera Utara",
+   "lat": 3.65,
+   "lon": 98.66667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Mataram",
+   "provinsi": "Nusa Tenggara Barat",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-04",
+   "nama": "Gudang Bulog Kanwil Nusa Tenggara Barat",
+   "lat": -8.5833,
+   "lon": 116.1167,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Semarang",
+   "provinsi": "Jawa Tengah",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-05",
+   "nama": "Gudang Bulog Kanwil Jawa Tengah",
+   "lat": -7.03333,
+   "lon": 110.38333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Bandar Lampung",
+   "provinsi": "Lampung",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-06",
+   "nama": "Gudang Bulog Kanwil Lampung",
+   "lat": -5.41667,
+   "lon": 105.25,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kab. Mamuju",
+   "provinsi": "Sulawesi Barat",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-07",
+   "nama": "Gudang Bulog Kanwil Sulawesi Barat",
+   "lat": -2.5,
+   "lon": 119.41667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Yogyakarta",
+   "provinsi": "DI Yogyakarta",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-08",
+   "nama": "Gudang Bulog Kanwil DI Yogyakarta",
+   "lat": -7.8,
+   "lon": 110.375,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Jayapura",
+   "provinsi": "Papua",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-09",
+   "nama": "Gudang Bulog Kanwil Papua",
+   "lat": -2.64647,
+   "lon": 140.77779,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Banjar Baru",
+   "provinsi": "Kalimantan Selatan",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-10",
+   "nama": "Gudang Bulog Kanwil Kalimantan Selatan",
+   "lat": -3.41667,
+   "lon": 114.83333,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Pekanbaru",
+   "provinsi": "Riau",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-11",
+   "nama": "Gudang Bulog Kanwil Riau",
+   "lat": 0.53333,
+   "lon": 101.46667,
+   "presisi_lokasi": "kabupaten"
+  },
+  {
+   "desa": null,
+   "kecamatan": null,
+   "kabupaten": "Kota Makassar",
+   "provinsi": "Sulawesi Selatan",
+   "komoditas": null,
+   "pengelola": "Perum Bulog",
+   "petani": null,
+   "luas_ha": null,
+   "panen_ton": null,
+   "tahun_mulai": null,
+   "kapasitas_ton": null,
+   "musim_panen": null,
+   "stok_simpan_ton": null,
+   "kebutuhan_ton": null,
+   "tingkat_baznas": null,
+   "status": {},
+   "sumber": [],
+   "perlu_verifikasi": [],
+   "catatan": "Gudang cadangan (ilustrasi). Titik = acuan kab/kota.",
+   "jenis": "bulog",
+   "id": "BLG-12",
+   "nama": "Gudang Bulog Kanwil Sulawesi Selatan",
+   "lat": -5.15,
+   "lon": 119.45,
    "presisi_lokasi": "kabupaten"
   }
  ],

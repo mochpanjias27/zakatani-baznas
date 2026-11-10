@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ZakaTani — Peta Rantai Pasok Lumbung Pangan BAZNAS</title>
 <meta name="description" content="Prototipe riset: peta, model optimasi alokasi, dan simulasi skenario rantai pasok Lumbung Pangan BAZNAS — Lumbung Pangan BAZNAS Berdaya, Umat Berjaya.">
+<script>(function(){try{var t=localStorage.getItem('zakatani:tema');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'gelap':'terang';document.documentElement.setAttribute('data-tema',t);}catch(e){document.documentElement.setAttribute('data-tema','terang');}})();</script>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
@@ -46,24 +47,16 @@
     <symbol id="i-unduh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
     <symbol id="i-gembok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
     <symbol id="i-buku" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M4 19a2 2 0 0 1 2-2h13v4H6a2 2 0 0 1-2-2Z"/></symbol>
+    <symbol id="i-logo" viewBox="0 0 48 48"><path d="M24 3C14.6 3 7 10.5 7 19.8 7 32 24 45 24 45s17-13 17-25.2C41 10.5 33.4 3 24 3Z" fill="#1F5E3B"/><path d="M24 34V15" stroke="#E3B23C" stroke-width="2.6" stroke-linecap="round"/><path d="M24 15c.2-3.6 2-6 5.2-7-.4 3.6-2.2 6-5.2 7ZM24 21c-3.2-.3-5.2-2.4-5.7-5.6 3.2.4 5.2 2.4 5.7 5.6ZM24 26.5c3.2-.3 5.2-2.4 5.7-5.6-3.2.4-5.2 2.4-5.7 5.6ZM24 32c-3-.3-4.9-2.2-5.4-5.2 3 .4 4.9 2.2 5.4 5.2Z" fill="#E3B23C"/></symbol>
+    <symbol id="i-matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-bulan-sabit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></symbol>
+    <symbol id="i-timbang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M12 5l-7 2M12 5l7 2"/><path d="M5 7l-3 7a3 3 0 0 0 6 0L5 7ZM19 7l-3 7a3 3 0 0 0 6 0l-3-7Z"/></symbol>
+    <symbol id="i-gudang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-5 9 5v12"/><path d="M7 21v-8h10v8M7 17h10"/></symbol>
   </defs>
 </svg>
 
 <a href="#utama" class="sr-only">Lewati ke konten</a>
 
-<!-- ============ Top bar ============ -->
-<div class="topbar">
-  <div class="wadah">
-    <div class="info">
-      <span><svg width="14" height="14"><use href="#i-buku"/></svg>Prototipe riset — Beasiswa Riset BAZNAS 2026 · Klaster B.7 Lumbung Pangan</span>
-      <span class="sembunyi-hp">Bukan situs resmi BAZNAS</span>
-    </div>
-    <label class="saklar" title="Sembunyikan semua angka berstatus contoh">
-      <input type="checkbox" id="saklar-asli" aria-describedby="ket-saklar"> Hanya data asli
-      <span id="ket-saklar" class="sr-only">Saat aktif, semua angka berlabel data contoh disembunyikan.</span>
-    </label>
-  </div>
-</div>
 
 <!-- ============ Navbar ============ -->
 <nav class="navbar" aria-label="Navigasi utama">
@@ -86,12 +79,17 @@
       <li><a href="#peta">Peta</a></li>
       <li><a href="#simulasi">Simulasi Alokasi</a></li>
       <li><a href="#profil">Profil Lumbung</a></li>
-      <li><a href="#dampak">Dampak</a></li>
-      <li><a href="#tentang">Tentang &amp; Metodologi</a></li>
-      <li><a href="#kelola"><span class="kunci">🔒</span> Kelola Data</a></li>
+      <li><a href="#metodologi">Metodologi</a></li>
+      <li><a href="#tentang">Tentang &amp; FAQ</a></li>
+      <li><a href="#kalkulator" class="menu-kalkulator"><svg width="18" height="18" aria-hidden="true"><use href="#i-logo"/></svg>Kalkulator Zakat</a></li>
     </ul>
+    <div class="tema" role="group" aria-label="Mode tampilan">
+      <button type="button" data-tema-pilih="terang" aria-label="Mode terang" title="Mode terang"><svg width="17" height="17" aria-hidden="true"><use href="#i-matahari"/></svg></button>
+      <button type="button" data-tema-pilih="gelap" aria-label="Mode gelap" title="Mode gelap"><svg width="17" height="17" aria-hidden="true"><use href="#i-bulan-sabit"/></svg></button>
+    </div>
   </div>
 </nav>
+<div class="pita-ilustrasi" role="note"><div class="wadah">Prototipe riset CRP untuk usulan Beasiswa Riset BAZNAS 2026. Angka kapasitas, kebutuhan, dan hasil simulasi adalah data ilustrasi, bukan data resmi BAZNAS.</div></div>
 
 <main id="utama">
 
@@ -133,9 +131,9 @@
           <li>Peta lumbung, penggilingan, dan kantor BAZNAS di setiap wilayah</li>
           <li>Hitung alokasi beras zakat fitrah dengan ongkos kirim paling hemat</li>
           <li>Simulasi gagal panen, jadwal Ramadan, dan perubahan kebutuhan</li>
-          <li>Setiap angka diberi tanda: data asli bersumber atau data contoh</li>
+          <li>Hitung zakat hasil panen dengan <a href="#kalkulator">kalkulator zakat</a></li>
         </ul>
-        <a class="btn btn-utama" href="#tentang">Baca Metodologi <span class="panah"><svg><use href="#i-panah"/></svg></span></a>
+        <a class="btn btn-utama" href="#metodologi">Baca Metodologi <span class="panah"><svg><use href="#i-panah"/></svg></span></a>
       </div>
     </div>
   </div>
@@ -156,13 +154,14 @@
     <div class="wadah">
       <div class="judul-seksi tengah">
         <span class="eyebrow">Yang bisa dilakukan</span>
-        <h2>Alat bantu untuk amil, juri, dan peneliti</h2>
+        <h2>Alat bantu untuk amil dan peneliti</h2>
       </div>
       <div class="grid-fitur">
         <a class="kartu-fitur" href="#peta"><span class="ikon"><svg><use href="#i-peta"/></svg></span><h3>Peta Rantai Pasok</h3><p>Lumbung, penggilingan, dan BAZNAS di satu peta, lengkap dengan jarak ke BAZNAS terdekat.</p><span class="lanjut">Buka peta →</span></a>
         <a class="kartu-fitur sorot" href="#simulasi"><span class="ikon"><svg><use href="#i-kalkulator"/></svg></span><h3>Simulasi Alokasi</h3><p>Hitung pembagian beras zakat fitrah yang paling hemat, dengan Bulog sebagai cadangan.</p><span class="lanjut">Hitung alokasi →</span></a>
         <a class="kartu-fitur" href="#profil"><span class="ikon"><svg><use href="#i-padi"/></svg></span><h3>Profil Lumbung</h3><p>Petani binaan, luas lahan, hasil panen, dan pengelola setiap lumbung.</p><span class="lanjut">Lihat profil →</span></a>
-        <a class="kartu-fitur" href="#dampak"><span class="ikon"><svg><use href="#i-naik"/></svg></span><h3>Dampak</h3><p>Petani binaan yang naik kelas menjadi muzaki di tiap lokasi.</p><span class="lanjut">Lihat dampak →</span></a>
+        <a class="kartu-fitur" href="#tentang" data-gulir="cerita-dampak"><span class="ikon"><svg><use href="#i-naik"/></svg></span><h3>Dampak</h3><p>Petani binaan yang naik kelas menjadi muzaki di tiap lokasi.</p><span class="lanjut">Lihat cerita dampak →</span></a>
+        <a class="kartu-fitur" href="#kalkulator"><span class="ikon ikon-logo"><svg><use href="#i-logo"/></svg></span><h3>Kalkulator Zakat</h3><p>Hitung zakat hasil panen sesuai nisab, langsung di HP.</p><span class="lanjut">Hitung zakat →</span></a>
       </div>
     </div>
   </div>
@@ -194,7 +193,6 @@
         <button class="chip" data-f-kom="padi" aria-pressed="false"><svg><use href="#i-padi"/></svg>Padi</button>
         <button class="chip" data-f-kom="jagung" aria-pressed="false"><svg><use href="#i-jagung"/></svg>Jagung</button>
         <button class="chip" data-f-kom="hortikultura" aria-pressed="false"><svg><use href="#i-daun"/></svg>Hortikultura</button>
-        <button class="chip" data-f-kom="kosong" aria-pressed="false">Belum ada data</button>
       </div>
       <div class="grup-filter" role="group" aria-label="Filter pengelola"><span>Pengelola</span>
         <button class="chip" data-f-peng="ri" aria-pressed="false">BAZNAS RI</button>
@@ -206,36 +204,44 @@
   </div>
   <div class="wadah-peta">
     <div class="peta" id="peta-utama" role="application" aria-label="Peta interaktif rantai pasok Lumbung Pangan"></div>
-    <div class="callout tersembunyi" id="callout-alur"><span>Contoh alur terdokumentasi: <b>Lumbung Sukabumi → BAZNAS RI</b></span><button id="callout-lihat">Lihat detail</button><button class="x" id="callout-tutup" aria-label="Tutup">✕</button></div>
+    <div class="callout tersembunyi" id="callout-alur"><span>Contoh alur: <b>Lumbung Sukabumi → BAZNAS RI</b></span><button id="callout-lihat">Lihat detail</button><button class="x" id="callout-tutup" aria-label="Tutup">✕</button></div>
     <div class="lapisan" role="group" aria-label="Lapisan peta"><b>Lapisan</b>
       <label><input type="checkbox" data-lapis="penggilingan" checked> Penggilingan</label>
       <label><input type="checkbox" data-lapis="baznas" checked> Kantor BAZNAS</label>
       <label><input type="checkbox" data-lapis="bulog" checked> Perum Bulog</label>
       <label><input type="checkbox" data-lapis="alur" checked> Alur pasok</label>
     </div>
-    <details class="legenda" open id="legenda-peta"><summary>Legenda</summary><ul id="isi-legenda"></ul></details>
+    <details class="legenda" id="legenda-peta"><summary>Legenda</summary><ul id="isi-legenda"></ul></details>
     <aside class="panel-detail" id="panel-detail" aria-label="Detail simpul" aria-live="polite"></aside>
   </div>
 </section>
 
 <!-- =================================================================== SIMULASI -->
 <section data-halaman="simulasi" class="tersembunyi">
-  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Model Optimasi Alokasi</span><h1>Simulasi Alokasi Beras Zakat Fitrah</h1><p>Model transportasi (pemrograman linear) mencari kiriman dari lumbung ke BAZNAS dengan ongkos total paling kecil. Perum Bulog menjadi pemasok cadangan agar kekurangan pasokan terlihat jelas.</p></div></div>
+  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Model Optimasi Alokasi</span><h1>Simulasi Alokasi Beras Zakat Fitrah</h1><p>Model alokasi dua tahap: beras petani binaan diserap sebanyak mungkin, lalu dipilih pengiriman dengan ongkos total paling kecil. Perum Bulog hanya mengisi kekurangan.</p></div></div>
   <div class="tata-simulasi">
     <div class="wadah-peta">
-      <div class="peta" id="peta-simulasi" role="application" aria-label="Peta hasil alokasi"></div>
-      <details class="legenda"><summary>Legenda hasil</summary><ul id="legenda-simulasi"></ul></details>
-      <div class="tirai tersembunyi" id="tirai-asli"><div><h3>Hasil disembunyikan</h3><p>Simulasi bergantung pada data contoh (kapasitas, kebutuhan, tarif). Matikan <b>Hanya data asli</b> di bilah atas untuk melihat hasilnya.</p></div></div>
+      <div class="peta-lekat">
+        <div class="peta" id="peta-simulasi" role="application" aria-label="Peta hasil alokasi"></div>
+        <details class="legenda"><summary>Legenda hasil</summary><ul id="legenda-simulasi"></ul></details>
+      </div>
     </div>
     <aside class="panel-parameter" aria-label="Parameter dan skenario">
       <h2>Parameter &amp; Skenario</h2>
-      <p class="catatan" style="margin-bottom:14px">Hasil dihitung ulang otomatis setiap kali nilai diubah. <span class="lencana-contoh"><svg><use href="#i-seru"/></svg>contoh</span> = angka sementara.</p>
+      <p class="catatan" style="margin-bottom:14px">Hasil dihitung ulang otomatis setiap kali nilai diubah.</p>
 
       <div class="blok"><h3><svg><use href="#i-truk"/></svg>Ongkos angkut</h3>
-        <div class="baris-input"><label for="p-tarif">Tarif (Rp/ton-km) <span class="lencana-contoh" data-status-param="tarif_per_tonkm"><svg><use href="#i-seru"/></svg>contoh</span></label><input type="number" id="p-tarif" min="0" step="50"></div>
-        <div class="baris-input"><label for="p-jalan">Faktor jalan <span class="lencana-contoh" data-status-param="faktor_jalan"><svg><use href="#i-seru"/></svg>contoh</span></label><input type="number" id="p-jalan" min="1" step="0.05"></div>
-        <div class="baris-input"><label for="p-bulog">Ongkos Bulog (Rp/ton) <span class="lencana-contoh" data-status-param="ongkos_bulog_per_ton"><svg><use href="#i-seru"/></svg>contoh</span></label><input type="number" id="p-bulog" min="0" step="50000"></div>
+        <div class="baris-input"><label for="p-tarif">Tarif angkut (Rp/ton-km)</label><input type="number" id="p-tarif" min="0" step="50"></div>
+        <div class="baris-input"><label for="p-jalan">Faktor jalan</label><input type="number" id="p-jalan" min="1" step="0.05"></div>
+        <div class="baris-input"><label for="p-lokal">Ongkos lokal minimum (Rp/ton)</label><input type="number" id="p-lokal" min="0" step="5000"></div>
+        <div class="baris-input"><label for="p-seberang">Penyeberangan antarpulau (Rp/ton)</label><input type="number" id="p-seberang" min="0" step="10000"></div>
+      </div>
+
+      <div class="blok"><h3><svg><use href="#i-karung"/></svg>Harga beli beras &amp; Bulog</h3>
+        <div class="baris-input"><label for="p-hlumbung">Harga beras lumbung (Rp/ton)</label><input type="number" id="p-hlumbung" min="0" step="100000"></div>
+        <div class="baris-input"><label for="p-hbulog">Harga beras Bulog (Rp/ton)</label><input type="number" id="p-hbulog" min="0" step="100000"></div>
         <div class="baris-input"><label for="p-bulogcap">Batas pasokan Bulog (ton)</label><input type="number" id="p-bulogcap" min="0" step="10" placeholder="tak terbatas"></div>
+        <p class="catatan">Bulog memasok dari gudang di provinsi kantor BAZNAS penerima.</p>
       </div>
 
       <div class="blok"><h3><svg><use href="#i-gilingan"/></svg>Penggilingan</h3>
@@ -274,29 +280,34 @@
 
 <!-- =================================================================== PROFIL -->
 <section data-halaman="profil" class="tersembunyi">
-  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Profil Lumbung</span><h1>Lumbung Pangan di seluruh Indonesia</h1><p>Data awal dari sumber publik, perlu verifikasi. Kolom kosong tampil "belum ada data".</p></div></div>
+  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Profil Lumbung</span><h1>Lumbung Pangan di seluruh Indonesia</h1><p>Petani binaan, luas lahan, hasil panen, dan pengelola dari 21 lokasi Lumbung Pangan BAZNAS.</p></div></div>
   <div class="bilah-filter"><div class="wadah">
     <div class="grup-filter" role="group" aria-label="Filter komoditas profil"><span>Komoditas</span>
       <button class="chip" data-p-kom="padi" aria-pressed="false"><svg><use href="#i-padi"/></svg>Padi</button>
       <button class="chip" data-p-kom="jagung" aria-pressed="false"><svg><use href="#i-jagung"/></svg>Jagung</button>
       <button class="chip" data-p-kom="hortikultura" aria-pressed="false"><svg><use href="#i-daun"/></svg>Hortikultura</button>
-      <button class="chip" data-p-kom="kosong" aria-pressed="false">Belum ada data</button>
     </div>
     <div class="grup-filter"><label for="p-cari" class="sr-only">Cari lumbung</label><input type="text" id="p-cari" placeholder="Cari nama atau daerah…" style="min-width:220px"></div>
   </div></div>
   <div class="seksi-kecil"><div class="wadah"><div class="grid-profil" id="grid-profil"></div></div></div>
 </section>
 
-<!-- =================================================================== DAMPAK -->
-<section data-halaman="dampak" class="tersembunyi">
-  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Dampak</span><h1>Petani binaan yang naik kelas menjadi muzaki</h1><p>Tujuan akhir Lumbung Pangan: mustahik hari ini menjadi pembayar zakat esok hari.</p></div></div>
-  <div class="seksi-kecil"><div class="wadah" id="isi-dampak"></div></div>
+<!-- =================================================================== METODOLOGI -->
+<section data-halaman="metodologi" class="tersembunyi">
+  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Metodologi</span><h1>Cara kerja ZakaTani</h1><p>Dari data lumbung sampai keputusan penyaluran, dan cara zakat hasil panen dihitung.</p></div></div>
+  <div class="seksi-kecil"><div class="wadah" id="isi-metodologi"></div></div>
 </section>
 
-<!-- =================================================================== TENTANG -->
+<!-- =================================================================== TENTANG & FAQ -->
 <section data-halaman="tentang" class="tersembunyi">
-  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Tentang &amp; Metodologi</span><h1>Cara kerja ZakaTani</h1><p>Tujuan riset, tim, sumber data, rumus model, asumsi, keterbatasan, dan disclaimer.</p></div></div>
-  <div class="seksi-kecil"><div class="wadah prosa" id="isi-tentang"></div></div>
+  <div class="kepala-halaman"><div class="wadah"><nav class="remah" aria-label="Remah roti"><a href="#beranda">Beranda</a> / <span>Tentang &amp; FAQ</span></nav><h1>Tentang ZakaTani</h1><p>Cerita pemanfaatan, pertanyaan umum, dan kontak.</p></div></div>
+  <div class="seksi-kecil"><div class="wadah" id="isi-tentang"></div></div>
+</section>
+
+<!-- =================================================================== KALKULATOR -->
+<section data-halaman="kalkulator" class="tersembunyi">
+  <div class="kepala-halaman"><div class="wadah"><span class="eyebrow">Kalkulator Zakat</span><h1>Hitung zakat hasil panen</h1><p>Isi hasil satu kali panen. Perhitungan dilakukan di perangkat Anda; tidak ada data yang dikirim.</p></div></div>
+  <div class="seksi-kecil"><div class="wadah" id="isi-kalkulator"></div></div>
 </section>
 
 <!-- =================================================================== KELOLA -->
@@ -309,18 +320,13 @@
 
 <!-- ============ Footer ============ -->
 <footer class="kaki-situs">
-  <div class="wadah grid">
-    <div>
-      <a class="merek" href="#beranda" style="margin-bottom:14px">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3C14.6 3 7 10.5 7 19.8 7 32 24 45 24 45s17-13 17-25.2C41 10.5 33.4 3 24 3Z" fill="#E3B23C"/><path d="M24 34V15" stroke="#153F28" stroke-width="2.4" stroke-linecap="round"/><path d="M24 15c.2-3.6 2-6 5.2-7-.4 3.6-2.2 6-5.2 7Z M24 21c-3.2-.3-5.2-2.4-5.7-5.6 3.2.4 5.2 2.4 5.7 5.6Z M24 26.5c3.2-.3 5.2-2.4 5.7-5.6-3.2.4-5.2 2.4-5.7 5.6Z" fill="#153F28"/></svg>
-        <span><b>ZakaTani</b><small>Peta Rantai Pasok Lumbung Pangan BAZNAS</small></span>
-      </a>
-      <p>Prototipe riset untuk memetakan dan menganalisis rantai pasok Lumbung Pangan: lumbung → penggilingan → BAZNAS penyalur → mustahik. BAZNAS disebut sebagai pengelola program, bukan pemilik situs ini.</p>
+  <div class="wadah kaki-baris">
+    <div class="kaki-kiri">
+      <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><path d="M24 3C14.6 3 7 10.5 7 19.8 7 32 24 45 24 45s17-13 17-25.2C41 10.5 33.4 3 24 3Z" fill="#E3B23C"/><path d="M24 34V15" stroke="#153F28" stroke-width="2.4" stroke-linecap="round"/><path d="M24 15c.2-3.6 2-6 5.2-7-.4 3.6-2.2 6-5.2 7Z M24 21c-3.2-.3-5.2-2.4-5.7-5.6 3.2.4 5.2 2.4 5.7 5.6Z M24 26.5c3.2-.3 5.2-2.4 5.7-5.6-3.2.4-5.2 2.4-5.7 5.6Z" fill="#153F28"/></svg>
+      <div><b>ZakaTani</b> · peta rantai pasok Lumbung Pangan BAZNAS<br><small>Bukan situs resmi BAZNAS · Data pada situs ini adalah ilustrasi · Peta © kontributor OpenStreetMap</small></div>
     </div>
-    <div><h4>Halaman</h4><ul><li><a href="#peta">Peta</a></li><li><a href="#simulasi">Simulasi Alokasi</a></li><li><a href="#profil">Profil Lumbung</a></li><li><a href="#dampak">Dampak</a></li></ul></div>
-    <div><h4>Riset</h4><ul><li><a href="#tentang">Tentang &amp; Metodologi</a></li><li><a href="#alur">Alur Rantai Pasok</a></li><li><a href="#kelola">Kelola Data (tim)</a></li></ul></div>
+    <div class="kaki-kanan"><b>© 2026 CRP</b><small>Communication in Research and Publications</small></div>
   </div>
-  <div class="disclaimer"><div class="wadah"><strong>Prototipe riset — Beasiswa Riset BAZNAS 2026.</strong> Data dari sumber publik; dapat berubah. Bukan situs resmi BAZNAS. Basemap: batas provinsi (GeoJSON terbuka) · Peta: Leaflet · © kontributor OpenStreetMap.</div></div>
 </footer>
 
 <!-- ============ Pustaka (CDN) ============ -->
@@ -338,6 +344,7 @@
 <script src="js/simulasi.js"></script>
 <script src="js/halaman.js"></script>
 <script src="js/kelola.js"></script>
+<script src="js/kalkulator.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

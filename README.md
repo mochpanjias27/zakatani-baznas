@@ -8,16 +8,21 @@ Jargon: *Lumbung Pangan BAZNAS Berdaya, Umat Berjaya.*
 ## Fitur
 | Halaman | Isi |
 |---|---|
-| Beranda | Hero, 4 kartu angka bersumber, ringkasan alur, fitur |
-| Alur Rantai Pasok | 5 langkah (Tanam → Panen → Giling & Kemas → Salur lewat BAZNAS → Zakat Fitrah) dan putaran "petani binaan menjadi muzaki"; klik langkah untuk melihat lumbung terkait |
-| Peta | Leaflet; lumbung/penggilingan/BAZNAS/Bulog dengan bentuk ikon berbeda; filter chip (komoditas, pengelola, provinsi); panel detail; BAZNAS terdekat (haversine) dan garis putus-putus; alur pasok beranimasi; bilah ringkasan dengan radius penggilingan yang bisa diatur |
-| Simulasi Alokasi | Model transportasi (LP) di browser; Bulog sebagai pemasok cadangan; faktor jalan & tarif bisa diubah; calon penggilingan baru (klik di peta); skenario curah hujan, jadwal Ramadan, perubahan kebutuhan; simpan & bandingkan hingga 3 skenario; ekspor CSV/PDF; pembanding pola saat ini (semua lewat BAZNAS RI) |
-| Profil Lumbung | Kartu per lumbung + "Lihat di peta" |
-| Dampak | Grafik petani binaan menjadi muzaki per lokasi (bersumber) |
-| Tentang & Metodologi | Tujuan, tim, rumus, parameter, sumber data, asumsi, keterbatasan, disclaimer |
-| Kelola Data | Unggah CSV/Excel → validasi kolom wajib → pratinjau → simpan; sunting simpul; parameter; ekspor; kembalikan data awal |
+| Beranda | Hero, 5 kartu angka berikon (lumbung, kapasitas, kebutuhan, ongkos kirim rata-rata, muzaki), Tentang ZakaTani, alur, 5 kartu fitur |
+| Alur Rantai Pasok | 5 langkah (Tanam → Panen → Giling & Kemas → Salur lewat BAZNAS → Zakat Fitrah) dan putaran "petani binaan menjadi muzaki" |
+| Peta | Leaflet + OpenStreetMap; lumbung/penggilingan/BAZNAS/gudang Bulog; filter; panel detail; BAZNAS terdekat; alur pasok beranimasi; 4 kartu angka |
+| Simulasi Alokasi | Model **dua tahap**: (1) serap beras petani binaan sebanyak mungkin, (2) ongkos total terkecil (kirim + harga beli); Bulog dari gudang provinsi hanya mengisi kekurangan; skenario curah hujan, jadwal Ramadan 1448–1450 H, kebutuhan; calon penggilingan; simpan 3 skenario; ekspor CSV/PDF; pembanding skema terpusat |
+| Profil Lumbung | 21 kartu + "Hitung zakat panen →" + "Lihat di peta" |
+| Metodologi | Tab Model alokasi · Zakat panen · Data & catatan |
+| Tentang & FAQ | Cerita pemanfaatan (ilustrasi), 6 pertanyaan umum, kontak surel CRP |
+| Kalkulator Zakat | Zakat hasil panen (nisab 653 kg gabah / 520 kg beras; 5% · 10% · 7,5%), dihitung di perangkat |
+| Kelola Data (tim) | Tidak ada di menu; buka lewat `…/#kelola` |
 
-Setiap angka punya status **asli** (bersumber) atau **contoh** (berlabel di semua halaman). Saklar **Hanya data asli** di bilah atas menyembunyikan semua angka contoh.
+Mode terang/gelap: tombol ☀/☾ di kanan menu (mengikuti pengaturan perangkat pada kunjungan pertama).
+
+**Semua angka kapasitas, kebutuhan, ongkos, dan hasil simulasi adalah data ilustrasi**; pita hijau muda di bawah menu menandainya di semua halaman. Status `asli`/`contoh` tetap disimpan di data untuk tim tetapi tidak ditampilkan.
+
+Yang perlu diisi tim: `kontakSurel` di `js/config.js` (alamat surel CRP).
 
 ## Struktur kode
 ```
@@ -34,10 +39,12 @@ js/peta.js                 pabrik peta + halaman Peta
 js/simulasi.js             halaman Simulasi Alokasi
 js/halaman.js              Beranda, Alur, Profil, Dampak, Tentang
 js/kelola.js               Kelola Data
-js/app.js                  titik masuk, router, saklar "Hanya data asli"
+js/kalkulator.js           kalkulator zakat panen
+js/app.js                  titik masuk, router, mode terang/gelap
 data/simpul.json           simpul, parameter, alur, statistik, dampak (TERPISAH dari kode)
 data/indonesia-provinsi.json  batas 38 provinsi (basemap luring)
-tools/buat_data.py         generator data awal (koordinat dari dataset resmi, bukan tebakan)
+tools/buat_data.py         generator data awal (koordinat dari dataset terbuka, bukan tebakan)
+tools/terapkan_ilustrasi.py  melengkapi data ilustrasi (petani, panen, gudang Bulog, parameter biaya)
 docs/supabase.sql          skema tabel + kebijakan akses Supabase
 ```
 
